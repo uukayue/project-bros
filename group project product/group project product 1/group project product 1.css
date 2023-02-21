@@ -1,0 +1,46 @@
+.carousel-inner {
+    height: 300px;
+  }
+  
+  .carousel-caption {
+      position: absolute;
+      top: 150px;
+      color:white;
+      text-shadow: 2px 0px  black;
+  }
+  .container{
+      width:90%;
+  }
+  
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+      height: 50px;
+      width: 50px;
+      outline: black;
+      background-color: rgba(0, 0, 0, 0.3);
+      background-size: 100%, 100%;
+     
+      border: 1px solid black;
+  }
+  
+  .container-col{
+    width:30%;
+    padding-left:15px;
+  }
+  .container-col-1{
+    width:25%;
+  }
+  .dot {
+    height: 25px;
+    width: 25px;
+    background-color:red;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-1 {
+    height: 25px;
+    width: 25px;
+    background-color:grey;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  

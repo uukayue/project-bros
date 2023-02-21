@@ -1,0 +1,179 @@
+#productdetail .carousel-inner {
+  height: 300px;
+}
+
+#productdetail .carousel-caption {
+  position: absolute;
+  top: 150px;
+  color: white;
+  text-shadow: 2px 0px black;
+}
+#productdetail .container {
+  width: 100%;
+  padding-top: 50px;
+}
+
+#productdetail .carousel-control-prev-icon,
+#productdetail .carousel-control-next-icon {
+  height: 50px;
+  width: 50px;
+  /*outline: black;*/
+  background-color: rgba(0, 0, 0, 0.3);
+  background-size: 100%, 100%;
+
+  border: 1px solid black;
+}
+
+/*  RATE-----BALLBALL---------*/
+#productdetail .rating {
+
+}
+#productdetail .rating span {
+  float: right;
+  position: relative;
+}
+#productdetail .rating span input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+}
+#productdetail .rating span label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  color: #fff;
+  background: gray;
+  font-size: 30px;
+  margin-right: 2px;
+  line-height: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 30%;
+}
+#productdetail .rating span:hover ~ span label,
+#productdetail .rating span:hover label,
+#productdetail .rating span.checked label,
+#productdetail .rating span.checked ~ span label {
+  background: orange;
+  color: black;
+}
+/*---------------------------------假棒棒----------------*/
+
+#productdetail .heading {
+  font-size: 25px;
+  margin-right: 25px;
+}
+
+#productdetail .fa {
+  font-size: 25px;
+}
+
+#productdetail .checked {
+  color: orange;
+}
+
+/* Three column layout */
+#productdetail .side {
+  float: left;
+  width: 15%;
+  margin-top: 10px;
+}
+
+#productdetail .middle {
+  margin-top: 10px;
+  float: left;
+  width: 70%;
+}
+
+/* Place text to the right */
+#productdetail .right {
+  text-align: right;
+}
+
+/* Clear floats after the columns */
+#productdetail .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The bar container */
+#productdetail .bar-container {
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: white;
+}
+
+/* Individual bars */
+#productdetail .bar-5 {
+  width: 60%;
+  height: 10px;
+  background-color: #04aa6d;
+}
+#productdetail .bar-4 {
+  width: 30%;
+  height: 10px;
+  background-color: #2196f3;
+}
+#productdetail .bar-3 {
+  width: 10%;
+  height: 10px;
+  background-color: #00bcd4;
+}
+#productdetail .bar-2 {
+  width: 4%;
+  height: 10px;
+  background-color: #ff9800;
+}
+#productdetail .bar-1 {
+  width: 15%;
+  height: 10px;
+  background-color: #f44336;
+}
+
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+@media (max-width: 400px) {
+  #productdetail .side,
+  #productdetail .middle {
+    width: 100%;
+  }
+  #productdetail .right {
+    display: none;
+  }
+}
+/*----------comment box----------------------------*/
+#productdetail .Comment{
+  margin: 20px 0;
+}
+
+#productdetail .commentbox {
+  border: red solid;
+  width: 100%;
+  height: 150px;
+}
+
+#productdetail .dot {
+  height: 25px;
+  width: 25px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+}
+#productdetail .dot-1 {
+  height: 25px;
+  width: 25px;
+  background-color: grey;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#productdetail #description,
+#productdetail #reviews {
+  padding: 50px 100px;
+}
+
+#productdetail .media-body {
+  font-size: 1.5rem;
+}

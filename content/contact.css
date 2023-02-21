@@ -1,0 +1,202 @@
+/* #reservation {
+  background-color: #444;
+}
+
+#reservation .title {
+  color: antiquewhite;
+}
+
+#reservation .bgImage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#reservation .bgImage img {
+  opacity: 0.5;
+}
+
+#reservation .content {
+  position: absolute;
+  top: 0;
+}
+
+#reservation .container2 {
+  opacity: 0.6;
+  margin: 50px 200px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  padding: 20px;
+}
+
+#reservation input[type="text"],
+#reservation select,
+#reservation textarea {
+  width: 400px;
+  padding: 12px;
+  border: 1px solid white;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  opacity: 0.8;
+}
+#reservation input.country {
+  width: 40px;
+  padding: 12px;
+  border: 1px solid white;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  opacity: 0.9;
+}
+#reservation input[type="submit"] {
+  background-color: #04aa6d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#reservation input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+
+#reservation button {
+  background-color: darkslategray;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  border-radius: 35px;
+  cursor: pointer;
+}
+#reservation button:hover {
+  background-color: green;
+  transition: 0.4s;
+} */
+
+#reservation form {
+  padding: 4em 10%;
+}
+
+#reservation .form-group {
+  margin-bottom: 20px;
+}
+
+#reservation h2.heading {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: left;
+  color: #506982;
+  border-bottom: 1px solid #506982;
+  padding-bottom: 3px;
+  margin-bottom: 20px;
+}
+
+#reservation .controls {
+  text-align: left;
+  position: relative;
+}
+
+#reservation .controls input,
+#reservation .controls textarea,
+#reservation .controls button,
+#reservation .controls select {
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #c6c6c6;
+  width: 100%;
+  margin-bottom: 18px;
+  color: #888;
+  font-family: "Lato", "sans-serif";
+  font-size: 16px;
+  font-weight: 300;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+#reservation .controls input:focus,
+#reservation .controls textarea:focus,
+#reservation .controls button:focus,
+#reservation .controls select:focus,
+#reservation .controls input:hover,
+#reservation .controls textarea:hover,
+#reservation .controls button:hover,
+#reservation .controls select:hover {
+  outline: none;
+  border-color: #9fb1c1;
+}
+
+#reservation .controls input:focus label,
+#reservation .controls textarea:focus label,
+#reservation .controls button:focus label,
+#reservation .controls select:focus label,
+#reservation .controls input:hover label,
+#reservation .controls textarea:hover label,
+#reservation .controls button:hover label,
+#reservation .controls select:hover label {
+  color: #077abc;
+  cursor: text;
+}
+
+#reservation .controls .fa-sort {
+  position: absolute;
+  right: 10px;
+  top: 17px;
+  color: #999;
+}
+
+#reservation .controls select {
+  appearance: none;
+  cursor: pointer;
+}
+
+#reservation .controls label {
+  position: absolute;
+  left: 8px;
+  top: 12px;
+  color: #999;
+  font-size: 16px;
+  display: inline-block;
+  padding: 0px 10px;
+  font-weight: 400;
+  background-color: rgba(255, 255, 255, 0);
+  pointer-events: none;
+  transition: color 0.3s, top 0.3s, background-color 0.8s;
+}
+
+#reservation .controls label.active {
+  top: -11px;
+  color: #555;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+#reservation .controls textarea {
+  resize: none;
+  height: 200px;
+}
+
+#reservation .controls button {
+  cursor: pointer;
+  background-color: #07b3a1;
+  border: none;
+  color: #fff;
+  padding: 12px 0;
+}
+
+#reservation .controls button:hover {
+  background-color: lighten(#07b3a1, 5%);
+}
+
+
