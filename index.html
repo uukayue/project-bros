@@ -28,7 +28,8 @@
   <script type="text/javascript" src="./js/signup.js"></script>
   <script type="text/javascript" src="./js/productdetail.js"></script>
   <script type="text/javascript" src="./js/Payment.js"></script>
-  <link rel="stylesheet" href="./content/checkout.css" />
+
+  <link rel="stylesheet" href="./content/checkout.css"/>
   <link rel="stylesheet" href="./content/main.css" />
   <link rel="stylesheet" href="./content/reservation.css" />
   <link rel="stylesheet" href="./content/productdetail.css" />
@@ -40,8 +41,9 @@
   <link rel="stylesheet" href="./content/shoppingCart.css" />
   <link rel="stylesheet" href="./content/signup.css" />
   <link rel="stylesheet" href="./content/Payment.css" />
+  <link rel="stylesheet" href="./content/footer.css"/>
 
-  <!--<script>
+  <!-- <script>
           function validateForm() {
               var x = document.forms["myForm"]["fname"].value;
               if (x == null || x == "") {
@@ -90,12 +92,12 @@
 
       <!-- SlideMenu -->
       <div class="menu-items" id="slidemenu" onmouseleave="hide();">
-        <li><a href="#" onclick="route('about');">About</a></li>
-        <li><a href="#" onclick="route('machines');">Machines</a></li>
-        <li><a href="#" onclick="route('coffee');">Coffee</a></li>
+        <li><a href="#" onclick="route('about');">About Us</a></li>
+        <li><a href="#" onclick="route('machines');">Our Machines</a></li>
+        <li><a href="#" onclick="route('coffee');">Our Coffee</a></li>
         <li><a href="#" onclick="route('receipes');">Receipes</a></li>
         <li><a href="#" onclick="route('reservation');">Reservation</a></li>
-        <li><a href="#" onclick="route('location');">Location</a></li>
+        <li><a href="#" onclick="route('location');">Sitemap</a></li>
         <li><a href="#" onclick="route('faqs');">FAQ</a></li>
       </div>
     </div>
@@ -525,7 +527,7 @@
     </div>
   </div>
 
-  <!-- Coffee(lok) -->
+  <!-- Coffee -->
   <div id="coffee" class="module" style="display: none;">
     <!-- Carousel -->
     <div id="sliderProducts" class="carousel slide" data-ride="carousel">
@@ -576,42 +578,41 @@
     <div class="container">
       <div class="title">Coffee</div>
 
-      <!-- ProductCard(lok) -->
+      <!-- Coffee-->
       <div id="card" class="card-deck">
         <div class="card card text-center">
           <img class="card-img-top"
-            src="https://www.nespresso.com/ecom/medias/sys_master/public/13201481662494/M-1156-2000x2000-FRONT.png"
+            src="./images/coffee/Napoli-PLP.webp"
             alt="Card image cap" onclick="route('coffeedetail');">
           <div class="card-block">
-            <h5 class="card-title">Pixie</h5>
-            <h5 class="btn btn-dark">$1188</h5>
+            <h5 class="card-title">NAPOLI</h5>
+            <h5 class="btn btn-dark">$47</h5>
             <div class="text-left">
-              <p class="card-text">Compact size;</p>
-              <p class="card-text">Industrial style with hammered metal sides;</p>
-              <p class="card-text">Optimised heat up time;</p>
-              <p class="card-text">Folding drip tray;</p>
+              <p class="card-text">Exceptionally Dark & Creamy;</p>
+              <p class="card-text">The most intense and dark roast in this range;</p>
+              <p class="card-text">inspired by the capital of coffee, reveals the deep-rooted roasting traditions of Naples.;</p>
+              <p class="card-text">So, its depth of character should come as no surprise.;</p>
             </div>
 
-            <a href="#" data-name="Pixie" data-price="1188" class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
+            <a href="#" data-name="Napoli" data-price="47" class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
 
           </div>
         </div>
 
         <div class="card card text-center">
           <img class="card-img-top"
-            src="https://www.nespresso.com/ecom/medias/sys_master/public/12569812172830/Desktop-Standard-2000x2000.png"
+            src="./images/coffee/paris.webp"
             alt="Card image cap" onclick="route('productdetail');">
           <div class="card-block">
-            <h5 class="card-title">Gran Lattissima</h5>
-            <h5 class="btn btn-dark">$3188</h5>
+            <h5 class="card-title">PARIS ESPRESSO</h5>
+            <h5 class="btn btn-dark">$47</h5>
             <div class="text-left">
-              <p class="card-text">Coffee shop recipes at a finger touch;</p>
-              <p class="card-text">One-touch milk system;</p>
-              <p class="card-text">9 recipes;</p>
-              <p class="card-text">3 coffee cup size selections;</p>
+              <p class="card-text"> balanced coffee with light bitterness,;</p>
+              <p class="card-text"> cereal biscuity notes, ;</p>
+              <p class="card-text">pleasant  and a hint of citrus.;</p>
             </div>
 
-            <a href="#" data-name="GranLattissima" data-price="3188" class="add-to-cart btn btn-primary btn-dark">Buy
+            <a href="#" data-name="ParisEspresso" data-price="47" class="add-to-cart btn btn-primary btn-dark">Buy
               Now</a>
 
           </div>
@@ -619,19 +620,18 @@
 
         <div class="card card text-center">
           <img class="card-img-top"
-            src="https://www.nespresso.com/ecom/medias/sys_master/public/14443718869022/M-0481-BlackC30-2000x2000.png"
+            src="./images/coffee/MILANO.webp"
             alt="Card image cap" onclick="route('productdetail');">
           <div class="card-block">
-            <h5 class="card-title">Essenza Mini & Aeroccino3 Black</h5>
-            <h5 class="btn btn-dark">$1488</h5>
+            <h5 class="card-title">MILANO INTENSO LIMITED EDITION</h5>
+            <h5 class="btn btn-dark">$47</h5>
             <div class="text-left">
-              <p class="card-text">Essenza Mini Coffee Machine;</p>
-              <p class="card-text">Aeroccino3 Milk Frother;</p>
-              <p class="card-text">Simple creation of milk receipes;</p>
-              <p class="card-text">Perfect bundle to start your Nespresso jpurney;</p>
+              <p class="card-text">Cocoa & Cereal;</p>
+              <p class="card-text">A classic combination of roasted-cereal and cocoa notes that alludes to bread and dark chocolate.;</p>
+              <p class="card-text"> A hint fruit and spices make this a deliciously complex blend.;</p>
             </div>
 
-            <a href="#" data-name="EssenzaMini&Aeroccino3Black" data-price="1488"
+            <a href="#" data-name="MilanoIntensoLimiedEdition" data-price="47"
               class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
 
           </div>
@@ -639,19 +639,18 @@
 
         <div class="card card text-center">
           <img class="card-img-top"
-            src="https://www.nespresso.com/ecom/medias/sys_master/public/14541544292382/White-Aero3-New-Product-KV-2000x2000px-02.png"
+            src="./images/coffee/istanbul.webp"
             alt="Card image cap" onclick="route('productdetail');">
           <div class="card-block">
-            <h5 class="card-title">Essenza Mini & Aeroccino3 White</h5>
-            <h5 class="btn btn-dark">$1488</h5>
+            <h5 class="card-title">ISTANBUL ESPRESSO</h5>
+            <h5 class="btn btn-dark">$47</h5>
             <div class="text-left">
-              <p class="card-text">Essenza Mini Coffee Machine;</p>
-              <p class="card-text">Aeroccino3 Milk Frother;</p>
-              <p class="card-text">Simple creation of milk receipes;</p>
-              <p class="card-text">Perfect bundle to start your Nespresso jpurney;</p>
+              <p class="card-text">Roasted With A Fruity Note And A Hint Of Almond;</p>
+              <p class="card-text">A complex espresso full of wild aromatics and a balance of both bitter roasted and fruity notes, ;</p>
+              <p class="card-text">with a touch of acidity and an almond finish that hints at sweetnss;</p>
             </div>
 
-            <a href="#" data-name="EssenzaMini&Aeroccino3White" data-price="1488"
+            <a href="#" data-name="IstanbulEspresso" data-price="47"
               class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
           </div>
         </div>
@@ -661,70 +660,68 @@
 
         <div class="card card text-center">
           <img class="card-img-top"
-            src="https://www.nespresso.com/ecom/medias/sys_master/public/14684050161694/essenza-mini-piano-black-2000x2000.png"
+            src="./images/coffee/Caramel-Cr-me-Brulee.webp"
             alt="Card image cap" onclick="route('productdetail');">
           <div class="card-block">
-            <h5 class="card-title">Essenza Mini</h5>
-            <h5 class="btn btn-dark">$988</h5>
+            <h5 class="card-title">CARAMEL CRÈME BRULEE</h5>
+            <h5 class="btn btn-dark">$52</h5>
             <div class="text-left">
-              <p class="card-text">Most compact machine;</p>
-              <p class="card-text">2 Cups sizes;</p>
-              <p class="card-text">Automatic switch-off after 9 mins;</p>
+              <p class="card-text">Go ahead and dream a little. We did. The warming flavour of caramel softens the roasted notes of our most rounded and smooth espresso.;</p>
+              <p class="card-text"> Creamy notes of caramel, coconut and vanilla dance through BARISTA CREATIONS Caramel Crème Brûlée.;</p>
             </div>
 
-            <a href="#" data-name="EssenzaMini" data-price="988" class="add-to-cart btn btn-primary btn-dark">Buy
+            <a href="#" data-name="CarmelCremeBrulee" data-price="52" class="add-to-cart btn btn-primary btn-dark">Buy
               Now</a>
           </div>
         </div>
 
         <div class="card card text-center">
           <img class="card-img-top"
-            src="https://www.nespresso.com/ecom/medias/sys_master/public/14215039156254/M-1270-2000x2000.png"
+            src="./images/coffee/INFINIMENT.webp"
             alt="Card image cap" onclick="route('productdetail');">
           <div class="card-block">
-            <h5 class="card-title">CitiZ Platinum</h5>
-            <h5 class="btn btn-dark">$1988</h5>
+            <h5 class="card-title">INFINIMENT ESPRESSO</h5>
+            <h5 class="btn btn-dark">$47</h5>
             <div class="text-left">
-              <p class="card-text">4 programmable coffee selections;</p>
-              <p class="card-text">Americano and hot water options;</p>
-              <p class="card-text">Descaling alert;</p>
+              <p class="card-text">Fruity & Cereal;</p>
+              <p class="card-text">An espresso that makes an art form of black coffee in playing with the tastes of Arabica from Tolima,;</p>
+              <p class="card-text">Colombia.;</p>
             </div>
-            <a href="#" data-name="CitiZPlatinum" data-price="1988" class="add-to-cart btn btn-primary btn-dark">Buy
+            <a href="#" data-name="InfinimentEspresso" data-price="47" class="add-to-cart btn btn-primary btn-dark">Buy
               Now</a>
           </div>
         </div>
 
         <div class="card card text-center">
           <img class="card-img-top"
-            src="https://www.nespresso.com/ecom/medias/sys_master/public/10755477012510/Barista-2000x2000-noreflection.png"
+            src="./images/coffee/BUENOS.webp"
             alt="Card image cap" onclick="route('productdetail');">
           <div class="card-block">
-            <h5 class="card-title">Barista</h5>
-            <h5 class="btn btn-dark">$1988</h5>
+            <h5 class="card-title">BUENOS AIRES LUNGO</h5>
+            <h5 class="btn btn-dark">$47</h5>
             <div class="text-left">
-              <p class="card-text">Whisk for all your preparations;</p>
-              <p class="card-text">Induction System;</p>
-              <p class="card-text">Touch Interface;</p>
-              <p class="card-text">20 Recipes available;</p>
+              <p class="card-text">Distinct Delight Sweet & Cereal;</p>
+              <p class="card-text">The sweet popcorn note and mild character of this Arabica and Robusta blend is a delicious complement to the vibrant city life of Buenos Aires.;</p>
+              <p class="card-text">A destination for true foodies, Buenos Aires is a highlight of Argentina’s vibrant food scene.;</p>
             </div>
-            <a href="#" data-name="Barista" data-price="1988" class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
+            <a href="#" data-name="BuenosAiresLungo" data-price="47" class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
           </div>
         </div>
 
         <div class="card card text-center">
           <img class="card-img-top"
-            src="https://www.nespresso.com/ecom/medias/sys_master/public/14215058489374/M-1274-2000x2000.png"
+            src="./images/coffee/TOKYO.webp"
             alt="Card image cap" onclick="route('productdetail');">
           <div class="card-block">
-            <h5 class="card-title">CitiZ Platinum & Milk</h5>
-            <h5 class="btn btn-dark">$2488</h5>
+            <h5 class="card-title">TOKYO LUNGO</h5>
+            <h5 class="btn btn-dark">$47</h5>
             <div class="text-left">
-              <p class="card-text">Modern stainless steel outlook;</p>
-              <p class="card-text">4 programmable coffee selections;</p>
-              <p class="card-text">Americano and hot water options;</p>
-              <p class="card-text">Milk recipes thanks to the integrated Aeroccino3;</p>
+              <p class="card-text">Sips Of Elegance Floral & Complex;</p>
+              <p class="card-text">The high quality Arabicas deliver exceptional flowery aromas and complex tastes worthy of Tokyo’s refined palate.;</p>
+              <p class="card-text">Known for tea, the Japanese also have a real affinity for coffee.;</p>
+            
             </div>
-            <a href="#" data-name="CitiZPlatinum&Milk" data-price="2488"
+            <a href="#" data-name="TokyoLungo" data-price="47"
               class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
           </div>
         </div>
@@ -1215,168 +1212,102 @@
     </div>
   </div>
 
-  <!-- CheckoutList -->
-  <div id="checkout" class="module" style="display: none;">
-    <div class="title">Check Out</div>
-    <main>
-      <div class="basket">
-        <div class="basket-module">
-          <label for="promo-code">Enter a promotional code</label>
-          <input id="promo-code" type="text" name="promo-code" maxlength="5" class="promo-code-field">
-          <button class="promo-code-cta">Apply</button>
+  
+  <!-- CheckoutList --> 
+  <div id="checkout" class="module" style="display: none">
+    <div class="title">Checkout</div>
+      <form action="">
+      <!-- Shopping Cart Details -->
+      <div class="row">
+        <div class="form-group col-8">
+        <h2 class="heading">Shopping Cart Details</h2>
+            <div class="basket row text-center">
+              <div class="col">
+                Item
+              </div>
+              <div class="col">
+                Price
+              </div>
+              <div class="col-6">
+                Quantity
+              </div>
+              <div class="col-3">
+                Subtotal
+              </div>
+            </div>
+           
+           
+            
+            
+            <table class="show-cart table">
+            </table>
+          <h2 class="heading">Total price: $<span class="total-cart"></span></h2>
         </div>
-        <div class="basket-labels">
-          <ul>
-            <li class="item item-heading">Item</li>
-            <li class="price">Price</li>
-            <li class="quantity">Quantity</li>
-            <li class="subtotal">Subtotal</li>
-          </ul>
+        <!--  Payment -->
+        <div class="form-group col-4">
+        <h2 class="heading">Shipping</h2>
+        
+        <div class="controls">
+            <input type="text" id="checkouefullname" class="floatLabel" pattern="[a-zA-Z]+" maxlength="30" name="name">
+            <label for="name"><i class="fa fa-user icon"></i>Full Name</label> 
+        </div>
+        
+        <div class="controls">
+            <input type="text" id="checkoutemail" class="floatLabel" name="email">
+            <label for="email"><i class="fa fa-envelope icon" ></i>Email</label>  
         </div>
 
-        <div class="modal-body">
-          <table class="show-cart table">
-          </table>
-          <div>Total price: $<span class="total-cart"></span>
-          </div>
+        <div class="controls">
+            <input type="text" id="checkoutaddress" class="floatLabel" name="name">
+            <label for="address"><i class="fa fa-marker icon" aria-hidden="true"></i>Address</label>  
         </div>
-        <!--     <div class="basket-product">
-              <div class="item">
-                <div class="product-image">
-                  <img src="http://placehold.it/120x166" alt="Placholder Image 2" class="product-frame">
-                </div>
-                <div class="product-details">
-                  <h1><strong><span class="item-quantity">4</span> x Eliza J</strong> Lace Sleeve Cuff Dress</h1>
-                  <p><strong>Navy, Size 18</strong></p>
-                  <p>Product Code - 232321939</p>
-                </div>
-              </div>
-              <div class="price">26.00</div>
-              <div class="quantity">
-                <input type="number" value="4" min="1" class="quantity-field">
-              </div>
-              <div class="subtotal">104.00</div>
-              <div class="remove">
-                <button>Remove</button>
-              </div>
-            </div>
-            <div class="basket-product">
-              <div class="item">
-                <div class="product-image">
-                  <img src="http://placehold.it/120x166" alt="Placholder Image 2" class="product-frame">
-                </div>
-                <div class="product-details">
-                  <h1><strong><span class="item-quantity">1</span> x Whistles</strong> Amella Lace Midi Dress</h1>
-                  <p><strong>Navy, Size 10</strong></p>
-                  <p>Product Code - 232321939</p>
-                </div>
-              </div>
-              <div class="price">26.00</div>
-              <div class="quantity">
-                <input type="number" value="1" min="1" class="quantity-field">
-              </div>
-              <div class="subtotal">26.00</div>
-              <div class="remove">
-                <button>Remove</button>
-              </div>
-            </div>
-          </div> -->
-        <aside>
-          <div class="summary">
-            <div class="summary-total-items"><span data-count="0"></span> Items in your Bag</div>
-            <div class="summary-subtotal">
-              <div class="subtotal-title">Subtotal</div>
-              <div class="total-cart subtotal-value final-value" id="basket-subtotal">130.00</div>
-              <div class="summary-promo hide">
-                <div class="promo-title">Promotion</div>
-                <div class="promo-value final-value" id="basket-promo"></div>
-              </div>
-            </div>
-            <!-- <div class="summary-delivery">
-                <select name="delivery-collection" class="summary-delivery-selection">
-                    <option value="0" selected="selected">Select Collection or Delivery</option>
-                   <option value="collection">Collection</option>
-                   <option value="first-class">Royal Mail 1st Class</option>
-                   <option value="second-class">Royal Mail 2nd Class</option>
-                   <option value="signed-for">Royal Mail Special Delivery</option>
-                </select>
-              </div> -->
-            <div class="summary-total">
-              <div class="total-title">Total</div>
-              <div class="total-value final-value" id="basket-total">130.00</div>
-            </div>
-            <div class="summary-checkout">
-              <button class="checkout-cta">Go to Secure Checkout</button>
-            </div>
-          </div>
-        </aside>
-    </main>
-  </div>
 
-  <div id="payment" class="module" style="display:none">
-    <div class="title">Payment</div>
-    <div class="wrapper container">
-      <h2>Payment Form</h2>
-      <form action="#">
-        <!--Account-->
-        <h4>Shipping</h4>
-        <div class="input_group">
-          <div class="input_box">
-            <input type="text" placeholder="Full Name" pattern="[a-zA-Z]+" maxlength="30" class="name">
-            <i class="fa fa-user icon"></i>
-          </div>
-          <div class="input_box">
-            <input type="text" placeholder="Name On Card" pattern="[a-zA-Z]+" maxlength="30" class="name">
-            <i class="fa fa-user icon"></i>
-          </div>
+        <div class="controls">
+            <input type="text" id="checkoutcity" class="floatLabel" name="name">
+            <label for="city"><i class="fa fa-institution icon" aria-hidden="true"></i>City</label>  
         </div>
-        <div class="input_group">
-          <div class="input_box">
-            <input type="email" placeholder="Email Address" class="name">
-            <i class="fa fa-envelope icon"></i>
-          </div>
-        </div>
-        <div class="input_group">
-          <div class="input_box">
-            <input type="text" placeholder="Address" class="name">
-            <i class="fa fa-marker icon" aria-hidden="true"></i>
-          </div>
-        </div>
-        <div class="input_group">
-          <div class="input_box">
-            <input type="text" placeholder="City" class="name">
-            <i class="fa fa-institution icon" aria-hidden="true"></i>
-          </div>
-        </div>
-        <div class="input_group">
-          <div class="input_box">
-            <h4>Payment Details</h4>
+
+        <h2 class="heading">Payment Details</h2>
+        <div class="input_box">
             <input type="radio" name="pay" class="radio" id="bc1">
             <label for="bc1">
               <span><i class="fa fa-cc-visa"></i> Credit Card</span></label>
             <input type="radio" name="pay" class="radio" id="bc2">
             <label for="bc2">
               <span><i class="fa fa-cc-paypal"></i> Paypal</span></label>
-          </div>
         </div>
-        <div class="input_group">
-          <div class="input_box">
-            <input type="tel" class="name" placeholder="Card Number 1111-2222-3333-4444"><i
-              class="fa fa-credit-card icon"></i>
-          </div>
+
+        <div class="controls">
+            <input type="tel" id="checkoutcardnumber" class="floatLabel" name="name">
+            <label for="cardnumber"><i class="fa fa-credit-card icon"></i>No. 1111-2222-3333-4444</label>  
         </div>
-        <div class="input_group">
-          <div class="input_box">
-            <input type="tel" class="name" placeholder="Card CVC XXX"><i class="fa fa-user icon"></i>
-          </div>
+
+        <div class="controls">
+            <input type="tel" id="checkoutcardnumbercvc" class="floatLabel" name="name">
+            <label for="cardnumbercvc"><i class="fa fa-user icon"></i>Card CVC XXX</label>  
         </div>
-        <div class="input_group">
-          <div class="input_box">
-            <input type="text" class="name" maxlength='5' onkeyup="formatString(event);" placeholder="MM / YY"><i
-              class="fa fa-calendar icon"></i>
-          </div>
+
+        <div class="controls">
+            <input type="text" id="checkoutcardexpire" class="floatLabel" name="name" maxlength='5' onkeyup="formatString(event);">
+            <label for="checkoutcardexpire"><i class="fa fa-calendar icon"></i>MM / YY</label>  
         </div>
-        <!--submit button-->
+      </div>
+      </div>
+       <button onclick="openPopup()" class="col-1-4">Pay Now</button>
+      </form>
+
+  
+    <div class="popup" id="popup">
+        <h2>Thank You!</h2>
+        <p>Your details has been successfully submitted. Thanks!</p>
+        <button type="button" onclick="route('homepage');">OK</button>
+    </div>
+  </div>
+
+ 
+
+
+   <!--submit button
         <div class="input_group">
           <div class="input_box">
             <button type="submit" class="btn" onclick="openPopup()">Pay Now</button>
@@ -1389,8 +1320,57 @@
         </div>
       </form>
     </div>
-  </div>
+  </div>-->
+
+
 
 </body>
+  <div id="footer" class="module" >
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>Newletter</h6>
+            <input type="email"  placeholder="Your email address here"/>
+              <button class="btn-outline-dark" id="subscribe">Subscribe</button>
+          </div>
 
+          <div class="col-xs-4 col-md-3">
+            <h6>Links</h6>
+            <ul class="footer-links">
+             <li><a href="#" on click="route('about')">About Us</a></li>
+             <li><a href="#" on click="route('machine')">Our Machines</a></li>
+              <li><a href="#" on click="route('coffee')">Our Coffee</a></li></ul>
+          </div>
+
+          <div class="col-xs-4 col-md-3">
+            <h6>&nbsp</h6>
+            <ul class="footer-links">
+              <li><a href="#" on click="route('reservation')">Reservation</a></li>
+              <li><a href="#" on click="route('location')">Sitemap</a></li> 
+              <li><a href="#" on click="route('faqs')">FAQs</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by 
+         <a href="#">ProjectBros</a>.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="http://www.twitter.com/"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="instagram" href="http://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
+              <li><a class="linkedin" href="http://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
 </html>

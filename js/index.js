@@ -24,7 +24,7 @@ function setTheme() {
   $('.navbar .hamburger-lines .line').css("background-color", "#fff");
 
   var darkmodemodulelist = ['machines', 'coffee']
-  var lightmodemodulelist = ['about', 'checkout', 'productdetail', 'reservation', 'location', 'faqs', 'payment']
+  var lightmodemodulelist = ['about', 'checkout', 'productdetail', 'reservation', 'location', 'faqs', 'checkout']
 
   var activemodule = GetActiveModule()
 
@@ -103,4 +103,13 @@ $(function () {
     pause: 'hover',
     wrap: true
   });
+
+  $('#coffee .carousel').carousel({
+    interval: 3000,
+    keyboard: true,
+    pause: 'hover',
+    wrap: true
+  });
 });
+
+

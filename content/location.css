@@ -8,7 +8,7 @@
 table#locTable {
   border: 1px black;
   border-radius: 10px;
-  background-color: lightcoral;
+  background-color: darkgray;
   margin: 0 auto 50px;
 }
 th,

@@ -22,3 +22,7 @@ function formatString(e) {
       /\/\//g, '/' // Prevent entering more than 1 `/`
     );
   }
+
+  function openPopup() {
+    document.getElementById("popup").style.display = "block";
+}

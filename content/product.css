@@ -1,24 +1,25 @@
-#machines {
+#machines, #coffee {
   font-family: "Poppins", sans-serif;
 }
 
-#machines .carousel-caption {
+#machines .carousel-caption, #coffee .carousel-caption{
   position: absolute;
   top: 150px;
   color: white;
   text-shadow: 2px 0px black;
 }
 
-#machines .carousel-caption div:first-of-type {
+#machines .carousel-caption div:first-of-type, 
+#coffee .carousel-caption div:first-of-type {
   font-size: 4.5rem;
   line-height: 1.2;
 }
 
-#machines .slidecontainer {
+#machines .slidecontainer, #coffee .slidecontainer {
   width: 120%;
 }
 
-#machines .slider {
+#machines .slider, #coffee .slider {
   -webkit-appearance: none;
   width: 20%;
   height: 20px;
@@ -30,11 +31,12 @@
   margin-left: 120px;
 }
 
-#machines .slider:hover {
+#machines .slider:hover, #coffee .slider:hover {
   opacity: 1;
 }
 
-#machines .slider::-webkit-slider-thumb {
+#machines .slider::-webkit-slider-thumb
+, #coffee .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 20px;
@@ -43,36 +45,39 @@
   cursor: pointer;
 }
 
-#machines .slider::-moz-range-thumb {
+#machines .slider::-moz-range-thumb
+, #coffee .slider::-moz-range-thumb {
   width: 20px;
   height: 20px;
   background: #04aa6d;
   cursor: pointer;
 }
 
-#machines .slidecontainer {
+#machines .slidecontainer
+, #coffee .slidecontainer {
   color: white;
   margin-left: 120px;
 }
 
-#machines .img-fluid {
+#machines .img-fluid
+, #coffee .img-fluid {
   max-height: 100vh;
   width: auto;
   height: auto;
   margin: auto;
 }
 
-#machines .container {
+#machines .container, #coffee .container {
   padding-bottom: 60px;
 }
 
-#machines .card-deck .card {
+#machines .card-deck .card, #coffee .card-deck .card {
   padding: 10px;
   justify-content: space-between;
   
 }
 
-#machines .card-block {
+#machines .card-block, #coffee .card-block {
   padding: 15px 20px;
   height: 100%;
   /* display: flex;
@@ -80,7 +85,7 @@
   justify-content: space-around; */
 }
 
-#machines .card-title {
+#machines .card-title, #coffee .card-title {
   min-height: 50px;
 }
 
@@ -89,6 +94,11 @@
   padding: 10px 0;
 }
 
-#machines .card img {
+#coffee .card .text-left{
+  height: 450px;
+  padding: 10px 0;
+}
+
+#machines .card img, #coffee .card img {
   cursor: pointer;
 }
