@@ -23,7 +23,7 @@
 
   <!-- Customize -->
   <script type="text/javascript" src="./js/index.js"></script>
-  <script type="text/javascript" src="./js/checkout.js"></script>
+ <!-- <script type="text/javascript" src="./js/checkout.js"></script> -->
   <script type="text/javascript" src="./js/shoppingCart.js"></script>
   <script type="text/javascript" src="./js/signup.js"></script>
   <script type="text/javascript" src="./js/productdetail.js"></script>
@@ -121,7 +121,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" onclick="route('checkout')" class="btn btn-primary">Order now</button>
+          <button type="button" onclick="route('checkout');" class="btn btn-primary">Order now</button>
         </div>
       </div>
     </div>
@@ -1235,10 +1235,7 @@
                 Subtotal
               </div>
             </div>
-           
-           
-            
-            
+         
             <table class="show-cart table">
             </table>
           <h2 class="heading">Total price: $<span class="total-cart"></span></h2>
@@ -1291,42 +1288,37 @@
             <input type="text" id="checkoutcardexpire" class="floatLabel" name="name" maxlength='5' onkeyup="formatString(event);">
             <label for="checkoutcardexpire"><i class="fa fa-calendar icon"></i>MM / YY</label>  
         </div>
-      </div>
-      </div>
-       <button onclick="openPopup()" class="col-1-4">Pay Now</button>
-      </form>
+      
+        <div class="input_box">
+            <button class="btn" onclick="openPopup();">Pay Now</button>
+       
+        </div>
 
-  
-    <div class="popup" id="popup">
-        <h2>Thank You!</h2>
-        <p>Your details has been successfully submitted. Thanks!</p>
-        <button type="button" onclick="route('homepage');">OK</button>
-    </div>
+        <div class="popup" id="popup">
+          <h2>Thank You!</h2>
+          <p>Your details has been successfully submitted. Thanks!</p>
+          <button type="button" onclick="route('homepage'); closePopup();">OK</button>
+        </div>
+        <script>
+          let popup = document.getElementById("popup");
+          function openPopup(){
+          popup.classList.add("open-popup");
+          }
+          function closePopup(){
+          popup.classList.remove("open-popup");
+          }
+        </script>       
+        </div>
+      </div>
+      </form>
+     
   </div>
 
- 
-
-
-   <!--submit button
-        <div class="input_group">
-          <div class="input_box">
-            <button type="submit" class="btn" onclick="openPopup()">Pay Now</button>
-            <div class="popup" id="popup">
-              <h2>Thank You!</h2>
-              <p>Your details has been successfully submitted. Thanks!</p>
-              <button type="button" onclick="route('homepage');">OK</button>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>-->
-
-
-
 </body>
+
+<!-- footer -->
   <div id="footer" class="module" >
-    <footer class="site-footer">
+<footer class="site-footer">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-6">
@@ -1373,4 +1365,5 @@
         </div>
       </div>
 </footer>
+</div>
 </html>

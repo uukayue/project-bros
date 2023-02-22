@@ -20,9 +20,8 @@ function formatString(e) {
       /[^\d\/]|^[\/]*$/g, '' // To allow only digits and `/`
     ).replace(
       /\/\//g, '/' // Prevent entering more than 1 `/`
-    );
-  }
-
-  function openPopup() {
-    document.getElementById("popup").style.display = "block";
-}
+    );}
+   
+ 
+  
+           

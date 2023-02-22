@@ -1,50 +1,16 @@
-#payment {
-    padding-bottom: 50px;
-}
 
-#payment .wrapper {
-  background-color: #fff;
-  padding: 25px;
-  margin: auto;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-}
 
-#payment .wrapper h2 {
-  background-color: #fcfcfc;
-  color: burlywood;
-  font-size: 24px;
-  padding: 10px;
-  margin-bottom: 8px;
-  text-align: center;
-  border: 1px dashed burlywood;
-}
-
-#payment .wrapper h4 {
-  padding-bottom: 5px;
-  color: burlywood;
-}
-
-#payment .input_group {
-  margin-bottom: 8px;
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  padding: 5px 0;
-}
-
-#payment .input_box {
+#checkout .input_box {
   width: 100%;
   margin-right: 12px;
   position: relative;
 }
 
-#payment .input_box:last-child {
+#checkout .input_box:last-child {
   margin-right: 0;
 }
 
-#payment .input_box .name {
+#checkout .input_box .name {
   padding: 14px 10px 14px 50px;
   width: 100%;
   background-color: #fcfcfc;
@@ -56,7 +22,7 @@
   color: #333;
 }
 
-#payment .input_box .name:focus,
+#checkout .input_box .name:focus,
 .dob:focus {
   -webkit-box-shadow: 0 0 2px 1px burlywood;
   -moz-box-shadow: 0 0 2px 1px burlywood;
@@ -64,24 +30,6 @@
   border: 1px solid burlywood;
 }
 
-#payment .input_box .icon {
-  width: 48px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  bottom: 0px;
-  color: #333;
-  background-color: #f1f1f1;
-  border-radius: 2px 0 0 2px;
-  transition: 0.3s;
-  font-size: 20px;
-  pointer-events: none;
-  border: 1px solid #00000003;
-  border-right: none;
-}
 
 #payment .name:focus + .icon {
   background-color: burlywood;
@@ -91,7 +39,7 @@
   transition: 1s;
 }
 
-#payment .dob {
+/*#payment .dob {
   width: 30%;
   padding: 14px;
   text-align: center;
@@ -100,13 +48,10 @@
   outline: none;
   border: 1px solid #c0bfbf;
   border-radius: 3px;
-}
+}*/
 
-#payment .radio {
-  display: none;
-}
 
-#payment .input_box label {
+#checkout .input_box label {
   width: 50%;
   padding: 13px;
   background-color: #fcfcfc;
@@ -116,24 +61,24 @@
   border: 1px solid #c0bfbf;
 }
 
-#payment .input_box label:first-of-type {
+/*#checkout .input_box label:first-of-type {
   border-top-left-radius: 3px;
   border-bottom-right-radius: 3px;
   border-right: none;
 }
 
-#payment .input_box label:last-of-type {
+#checkout .input_box label:last-of-type {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
 
-#payment .radio:checked + label {
+#checkout .radio:checked + label {
   background-color: burlywood;
   color: #fff;
   transition: 0.5s;
-}
+}*/
 
-#payment .input_box button {
+#checkout .input_box button {
   width: 100%;
   background-color: burlywood;
   border: none;
@@ -145,7 +90,7 @@
   border-radius: 8px;
 }
 
-#payment .input_box button:hover {
+#checkout .input_box button:hover {
   cursor: pointer;
   background-color: rgb(211, 159, 90);
 }
@@ -159,41 +104,4 @@
   font-weight: 500;
   border-radius: 30px;
 }
-#payment .popup {
-  width: 400px;
-  background: #fff;
-  border-radius: 6px;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.1);
-  text-align: center;
-  padding: 0 30px 30px;
-  color: #333;
-  visibility: hidden;
-  transition: transform 0.4s, top 0.4s;
-}
-#payment .open-popup {
-  visibility: visible;
-  top: 50%;
-  transform: translate(-50%, -300%) scale(1);
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-}
-#payment .popup h2 {
-  font-size: 38px;
-  font-weight: 500;
-  margin: 30px 0 10px;
-}
-#payment .popup button {
-  width: 100%;
-  margin-top: 50px;
-  padding: 10px 0;
-  background: rgb(202, 138, 55);
-  color: #fff;
-  border: 0;
-  outline: none;
-  font-size: 18px;
-  border-radius: 4px;
-  cursor: pointer;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-}
+

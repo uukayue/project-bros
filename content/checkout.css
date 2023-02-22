@@ -151,3 +151,44 @@
     width: 12.5%;
 }
  
+
+
+
+#checkout .popup {
+    width: 400px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+  }
+  #checkout .open-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-140%, -100%) scale(1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  }
+  #checkout .popup h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+  }
+  #checkout .popup button {
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: rgb(202, 138, 55);
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  }

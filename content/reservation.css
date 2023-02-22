@@ -40,7 +40,7 @@
     text-align: left;
     position: relative;
 }
-#reservation  .controls input[type="text"], .controls input[type="email"], .controls input[type="number"], .controls input[type="date"], .controls input[type="tel"],  .controls input[type="time"], .controls textarea, .controls button, .controls select {
+#reservation  .controls input[type="text"], .controls input[type="email"], .controls input[type="number"], .controls input[type="date"],#reservation .controls input[type="tel"],  .controls input[type="time"], .controls textarea, .controls button, .controls select {
     padding: 12px;
     font-size: 14px;
     border: 1px solid #c6c6c6;
