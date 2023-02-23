@@ -41,13 +41,12 @@
     position: relative;
 }
 #checkout  .controls input[type="text"], .controls input[type="email"], .controls input[type="number"], .controls input[type="date"], .controls input[type="tel"],  .controls input[type="time"], .controls textarea, .controls button, .controls select {
-    padding: 12px;
+    padding: 16px;
     font-size: 14px;
     border: 1px solid #c6c6c6;
     width: 100%;
     margin-bottom: 18px;
     color: #888;
-    font-size: 16px;
     font-weight: 300;
     border-radius: 2px;
     transition: all .3s;
@@ -74,7 +73,7 @@
     position: absolute;
     left: 8px;
     top: 12px;
-    width: 60%;
+    width: 85%;
     color: #999;
     font-size: 16px;
     display: inline-block;
@@ -150,8 +149,34 @@
  .col-1-8 {
     width: 12.5%;
 }
- 
 
+
+
+#checkout .radio:checked + label {
+    background-color: burlywood;
+    color: #fff;
+    padding: 0px;
+    transition: 0.5s;
+    
+  }
+  
+  #checkout .input_box button {
+    width: 100%;
+    background-color: burlywood;
+    border: none;
+    color: #fff;
+    padding: 15px;
+    border-right: 4px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+  }
+  
+  #checkout .input_box button:hover {
+    cursor: pointer;
+    background-color: rgb(211, 159, 90);
+  }
+ 
 
 
 #checkout .popup {
@@ -171,7 +196,7 @@
   #checkout .open-popup {
     visibility: visible;
     top: 50%;
-    transform: translate(-140%, -100%) scale(1);
+    transform: translate(-160%, -80%) scale(1);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   }
   #checkout .popup h2 {

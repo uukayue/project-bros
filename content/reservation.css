@@ -41,13 +41,12 @@
     position: relative;
 }
 #reservation  .controls input[type="text"], .controls input[type="email"], .controls input[type="number"], .controls input[type="date"],#reservation .controls input[type="tel"],  .controls input[type="time"], .controls textarea, .controls button, .controls select {
-    padding: 12px;
+    padding: 16px;
     font-size: 14px;
     border: 1px solid #c6c6c6;
     width: 100%;
     margin-bottom: 18px;
     color: #888;
-    font-size: 16px;
     font-weight: 300;
     border-radius: 2px;
     transition: all .3s;
