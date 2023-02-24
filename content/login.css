@@ -13,11 +13,7 @@
     background: none;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
-#login .tip {
-    font-size: 20px;
-    margin: 40px auto 50px;
-    text-align: center;
-}
+
 #login .cont {
     overflow: hidden;
     position: relative;
@@ -74,7 +70,7 @@
     top: 0;
     width: 900px;
     height: 100%;
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/sections-3.jpg');
+    background-image:url("/images//login/SET_1_Master.jpg");
     background-size: cover;
     transition: transform 1.2s ease-in-out;
 }
@@ -193,6 +189,7 @@
     font-size: 12px;
     color: #cfcfcf;
 }
+#submit,
 #login .submit {
     margin-top: 40px;
     margin-bottom: 20px;
