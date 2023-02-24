@@ -20,6 +20,7 @@
 }
 
 #signup form input[type="text"],
+#signup form input[type="email"],
 #signup form input[type="password"],
 #signup form select {
   /*background-color: white;*/
