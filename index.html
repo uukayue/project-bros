@@ -28,7 +28,8 @@
   <script type="text/javascript" src="./js/signup.js"></script>
   <script type="text/javascript" src="./js/productdetail.js"></script>
   <script type="text/javascript" src="./js/Payment.js"></script>
-
+  <script type="text/javascript" src="./js/login.js"></script>
+  
   <link rel="stylesheet" href="./content/checkout.css"/>
   <link rel="stylesheet" href="./content/main.css" />
   <link rel="stylesheet" href="./content/reservation.css" />
@@ -43,15 +44,7 @@
  <!-- <link rel="stylesheet" href="./content/Payment.css" />-->
   <link rel="stylesheet" href="./content/footer.css"/>
 
-  <!-- <script>
-          function validateForm() {
-              var x = document.forms["myForm"]["fname"].value;
-              if (x == null || x == "") {
-                  alert("需要输入名字。");
-                  return false;
-              }
-          }
-    </script>-->
+
   <title>Nespresso</title>
 </head>
 
@@ -136,18 +129,18 @@
       </div>
       <div class="login">
         <label for="uname"><b>Phone number</b></label>
-        <input type="text" onkeyup="value=value.replace(/[^\d]/g,'')" mixlength="8" maxlength="8"
+        <input type="text" id="username"onkeyup="value=value.replace(/[^\d]/g,'')" mixlength="8" maxlength="8"
           placeholder="Please enter your phone number" name="fname" required="required">
         <br /><br />
         <label for="psw"><b>Password</b></label>
-        <input type="password" mixlength="8" maxlength="12" placeholder="Please enter your password" name="psw"
+        <input type="password" id="password" mixlength="8" maxlength="12" placeholder="Please enter your password" name="psw"
           required="required">
-        <button type="button" class="btn btn-outline-light" onclick="myfunction(Login)">Login</button>
-
+        <button type="button" class="btn btn-outline-light" onclick="function validate()">Login</button>
+        
         <input type="checkbox" checked="checked" name="Remember">Remember me
         <button href="" id class="loginbutton" onclick="route('signup');">Register now</button>
         <!--button onclick="window.location.href='T5.registration.html';">Register now-->
-        <button onclick="window.location.href='沒有連線.com';">Forgot your password
+        <button onclick="window.location.href='';">Forgot your password
       </div>
       <P>By joining our Nespresso Membership, your personal data provided hereunder may be stored, processed,
         transferred and used by Nespresso entities (including Nestlé Nespresso SA, Nestlé Hong Kong Limited), our
@@ -159,26 +152,13 @@
       <P> Nestlé Hong Kong Ltd</P>
       <P> 7/F, Manhattan Place, 23 Wang Tai Road, Kowloon Bay, Hong Kong</P>
     </form>
-    <!---- <script>
-               
-        function Login(){ 
-          var done=0; 
-          var phonenumber=document.login.phonenumber.value; 
-          (phonenumber=phonenumber); 
-          var password=document.login.password.value; 
-          password=password.toLowerCase(); 
-          if (username=="帳號" && password=="密碼") { window.location="登入後會出現的網站"; done=1; } 
-          if (done==0) { alert("帳號或密碼錯誤時出現的訊息"); } 
-          } 
-                  if (phonenumber=="phonenumber" && password=="password") { window.location="登入後會出現的網站"; done=1; } 
-      if (done==0) { alert("密碼不正確,請再次輸入"); } 
-       </script--->
+  
   </div>
 
   <!-- Signup -->
   <div id="signup" class="module container" style="display: none;">
     <div class="title">Sign Up</div>
-    <form action="https://連去後端/" form name="myForm" action="demo_form.php" onsubmit="return validateForm()"
+    <form action="" form name="myForm" action="demo_form.php" onsubmit="return validateForm()"
       method="post">
       <div class="logo">
         <img src="./images/login/nespresso-logo.png" alt="Avatar" style="width: 200px">
@@ -222,7 +202,7 @@
             <b>E-mail address* </b>
           </div>
           <div class="col-sm">
-            <input type="text" name="fname" required="required" width="00px">
+            <input type="email" name="fname" required="required" width="00px">
           </div>
         </div>
         <div class="row">
@@ -240,8 +220,7 @@
             <b> New password*</b><br />
             <p1> Password must:
               Have at least 8 characters
-              Contain a number
-              Contain a lower case letter</p1>
+              </p1>
           </div>
           <div class="col-sm">
             <input type="password" id="password1" mixlength="8" maxlength="12" name="fname" required="required">
