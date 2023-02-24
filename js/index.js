@@ -1,6 +1,7 @@
 //SwitchPages//
 function route(section) {
   $(".module").hide();
+  $("#chatbox").show();
 
   if (section == "homepage") {
     $("#homepage").show();
@@ -24,7 +25,7 @@ function setTheme() {
   $('.navbar .hamburger-lines .line').css("background-color", "#fff");
 
   var darkmodemodulelist = ['machines', 'coffee']
-  var lightmodemodulelist = ['about', 'checkout', 'productdetail', 'reservation', 'location', 'faqs', 'checkout']
+  var lightmodemodulelist = ['about', 'checkout', 'productdetail', 'reservation', 'location', 'faqs', 'checkout', 'signup', 'login']
 
   var activemodule = GetActiveModule()
 

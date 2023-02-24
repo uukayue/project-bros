@@ -1,6 +1,6 @@
 .navbar {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 100%;
   -ms-flex-align: center;
   -ms-flex-pack: justify;
@@ -52,7 +52,7 @@
   width: 32px;
   top: 20px;
   left: 20px;
-  z-index: 10;
+  z-index: 15;
   opacity: 0;
   cursor: pointer;
 }
@@ -64,7 +64,7 @@
   position: absolute;
   top: 20px;
   left: 20px;
-  z-index: 9;
+  z-index: 14;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -107,7 +107,7 @@
   text-align: left;
   margin-right: 10%;
   background-color: rgba(37, 31, 24, 0.98);
-  z-index: 2;
+  z-index: 8;
 }
 
 .navbar .menu-items a {

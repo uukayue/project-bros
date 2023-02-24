@@ -31,8 +31,8 @@
     text-transform: uppercase;
     font-weight: 300;
     text-align: left;
-    color: #506982;
-    border-bottom: 1px solid #506982;
+    color: #5c4410;;
+    border-bottom: 1px solid #5c4410;;
     padding-bottom: 3px;
     margin-bottom: 20px;
 }
@@ -53,17 +53,17 @@
 }
 #reservation  .controls input[type="text"]:focus, .controls input[type="text"]:hover, .controls input[type="email"]:focus, .controls input[type="email"]:hover, .controls input[type="number"]:focus, .controls input[type="number"]:hover, .controls input[type="date"]:focus, .controls input[type="date"]:hover, .controls input[type="tel"]:focus, .controls input[type="tel"]:hover, .controls input[type="time"]:focus, .controls input[type="time"]:hover, .controls textarea:focus, .controls textarea:hover, .controls button:focus, .controls button:hover, .controls select:focus, .controls select:hover {
     outline: none;
-    border-color: #9FB1C1;
+    border-color: #5c4410;;
 }
 #reservation .controls input[type="text"]:focus + label, .controls input[type="text"]:hover + label, .controls input[type="email"]:focus + label, .controls input[type="email"]:hover + label, .controls input[type="number"]:focus + label, .controls input[type="number"]:hover + label, .controls input[type="date"]:focus + label, .controls input[type="date"]:hover + label, .controls input[type="tel"]:focus + label, .controls input[type="tel"]:hover + label, .controls input[type="time"]:focus + label, .controls input[type="time"]:hover + label, .controls textarea:focus + label, .controls textarea:hover + label, .controls button:focus + label, .controls button:hover + label, .controls select:focus + label, .controls select:hover + label {
-    color: #bdcc00;
+    color: #5c4410;;
     cursor: text;
 }
 #reservation .controls .fa-sort {
     position: absolute;
     right: 10px;
     top: 17px;
-    color: #999;
+    color: #5c4410;;
 }
 #reservation  .controls select {
     appearance: none;
@@ -85,7 +85,7 @@
 }
 #reservation .controls label.active {
     top: -11px;
-    color: #555;
+    color: #5c4410;;
     background-color: white;
     width: auto;
 }
@@ -95,16 +95,21 @@
 }
 #reservation  button {
     cursor: pointer;
-    outline-color: #444;
-    background-color: transparent;
-    color: #444;
-    padding: 12px 0;
-    float: right;
+    border: 1px solid #5c4410;
+    padding: 10px 0px;
+    border-radius: 8px;
+    color: #fff;
+    background: #5c4410;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    transition: 200ms;
+    text-align: center;
 }
 #reservation  button:hover {
-    background-color: #224c60;
-    color: white
+  background: #fff;
+  color: #2b1b04;
 }
+
 #reservation  .clear:after {
     content: "";
     display: table;
@@ -120,7 +125,7 @@
     clear: both;
 }
  [class*='col-'] {
-    float: left;
+    float:right;
     padding-right: 10px;
 }
 #reservation  .grid [class*='col-']:last-of-type {

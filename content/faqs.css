@@ -15,15 +15,15 @@ html{
 
 /*section used for centering process*/
 
-
-/*#faqs {
-  width: 100%;
+#faqs {
+  /* width: 100%;
   height: 100rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #644d38;
-}*/
+  color: #644d38; */
+  padding-bottom: 50px;
+}
 /*.container{
     width: 100%;
     max-width: 80rem;
@@ -32,10 +32,9 @@ html{
 }*/
 
 #faqs .accordion {
- font-family: "Philosopher", sans-serif;
- font-weight:500;
- border-radius: 8px ;
- padding:0 350px;
+  font-family: "Philosopher", sans-serif;
+  font-weight: 500;
+  border-radius: 8px;
 }
 
 #faqs .accordion-item {
@@ -48,13 +47,13 @@ html{
 #faqs .accordion-link {
   font-family: "Philosopher", sans-serif;
   font-size: 1.2rem;
-  font-weight:200;
+  font-weight: 200;
   color: whitesmoke;
   text-decoration: none;
   background-color: #281914e2;
   /*outline-color: white;
   outline-style:solid;*/
-  border-radius: 8px ;
+  border-radius: 8px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -62,7 +61,7 @@ html{
   padding: 1rem 2rem;
 }
 
-#faqs .accordion-link:hover{
+#faqs .accordion-link:hover {
   color: whitesmoke;
   font-weight: bold;
   text-decoration: none;

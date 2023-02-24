@@ -1,4 +1,5 @@
 #location {
+  padding-bottom: 50px;
 }
 /*  .GOOGLEMAP{
             float: left;
@@ -9,7 +10,7 @@ table#locTable {
   border: 1px black;
   border-radius: 10px;
   background-color: darkgray;
-  margin: 0 auto 50px;
+  margin: auto;
 }
 th,
 td {

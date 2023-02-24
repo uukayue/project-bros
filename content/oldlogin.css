@@ -1,0 +1,65 @@
+#login {
+  /* width: 70%;
+  margin: 50px auto; */
+  padding-bottom: 50px;
+}
+
+#login form {
+  border: 3px solid #281914e2;
+  padding: 50px 200px;
+}
+
+#login input[type="text"],
+#login input[type="password"] {
+  /*background-color: whitesmoke;*/
+  color: #444;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #281914e2;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+#login button {
+  background-color:#281914e2;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#login button:hover {
+  background-color: #3e271fe2;
+  transition: 0.4s;
+}
+
+#login .logo {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+#login .login {
+  padding: 16px;
+}
+
+#login span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens 
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+P{font-size: 13PX;color:azure}*/

@@ -20,17 +20,13 @@
   <script
     src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
 
-
   <!-- Customize -->
   <script type="text/javascript" src="./js/index.js"></script>
- <!-- <script type="text/javascript" src="./js/checkout.js"></script> -->
   <script type="text/javascript" src="./js/shoppingCart.js"></script>
   <script type="text/javascript" src="./js/signup.js"></script>
   <script type="text/javascript" src="./js/productdetail.js"></script>
   <script type="text/javascript" src="./js/Payment.js"></script>
-  <script type="text/javascript" src="./js/login.js"></script>
-  
-  <link rel="stylesheet" href="./content/checkout.css"/>
+  <link rel="stylesheet" href="./content/checkout.css" />
   <link rel="stylesheet" href="./content/main.css" />
   <link rel="stylesheet" href="./content/reservation.css" />
   <link rel="stylesheet" href="./content/productdetails.css" />
@@ -41,10 +37,19 @@
   <link rel="stylesheet" href="./content/product.css" />
   <link rel="stylesheet" href="./content/shoppingCart.css" />
   <link rel="stylesheet" href="./content/signup.css" />
- <!-- <link rel="stylesheet" href="./content/Payment.css" />-->
-  <link rel="stylesheet" href="./content/footer.css"/>
+  <link rel="stylesheet" href="./content/chatbox.css" />
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./content/footer.css" />
 
-
+  <!-- <script>
+          function validateForm() {
+              var x = document.forms["myForm"]["fname"].value;
+              if (x == null || x == "") {
+                  alert("需要输入名字。");
+                  return false;
+              }
+          }
+    </script>-->
   <title>Nespresso</title>
 </head>
 
@@ -80,7 +85,6 @@
           </a>
           </span>
         </div>
-
       </div>
 
       <!-- SlideMenu -->
@@ -90,7 +94,7 @@
         <li><a href="#" onclick="route('coffee');">Our Capsules</a></li>
         <li><a href="#" onclick="route('receipes');">Receipes</a></li>
         <li><a href="#" onclick="route('reservation');">Reservation</a></li>
-        <li><a href="#" onclick="route('location');">Sitemap</a></li>
+        <li><a href="#" onclick="route('location');">Location</a></li>
         <li><a href="#" onclick="route('faqs');">FAQ</a></li>
       </div>
     </div>
@@ -113,134 +117,175 @@
           <div>Total price: $<span class="total-cart" id="total-cart"></span></div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" onclick="route('checkout');" class="btn btn-primary">Order now</button>
+          <button type="button" class="btn" data-dismiss="modal">Close</button>
+          <button type="button" onclick="route('checkout');" class="btn">Order now</button>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Login -->
-  <div id="login" class="module container" style="display: none;">
-    <div class="title">Login</div>
-    <form action="/action_page.php" method="post">
-      <div class="logo">
-        <img src="./images/login/nespresso-logo.png" alt="Avatar" style="width: 200px">
+  <div id="login" class="module" style="display: none;">
+    <div class="container">
+      <body>
+        <p class="tip">Click on button in image container</p>
+    <div class="cont">
+      <div class="form sign-in">
+        <h2>Welcome back,</h2>
+        <label>
+          <span>Email</span>
+          <input type="email" />
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" />
+        </label>
+        <p class="forgot-pass">Forgot password?</p>
+        <button type="button" class="submit">Sign In</button>
+        <button type="button" class="fb-btn">Connect with <span>facebook</span></button>
       </div>
-      <div class="login">
-        <label for="uname"><b>Phone number</b></label>
-        <input type="text" id="username"onkeyup="value=value.replace(/[^\d]/g,'')" mixlength="8" maxlength="8"
-          placeholder="Please enter your phone number" name="fname" required="required">
-        <br /><br />
-        <label for="psw"><b>Password</b></label>
-        <input type="password" id="password" mixlength="8" maxlength="12" placeholder="Please enter your password" name="psw"
-          required="required">
-        <input type="button" value="Login" id="submit" onclick="validate()"/>
-        
-        <input type="checkbox" checked="checked" name="Remember">Remember me
-        <button href="" id class="loginbutton" onclick="route('signup');">Register now</button>
-        <!--button onclick="window.location.href='T5.registration.html';">Register now-->
-        <button onclick="window.location.href='';">Forgot your password
+      <div class="sub-cont">
+        <div class="img">
+          <div class="img__text m--up">
+            <h2>New here?</h2>
+            <p>Sign up and discover great amount of new opportunities!</p>
+          </div>
+          <div class="img__text m--in">
+            <h2>One of us?</h2>
+            <p>If you already has an account, just sign in. We've missed you!</p>
+          </div>
+          <div class="img__btn">
+            <span class="m--up">Sign Up</span>
+            <span class="m--in">Sign In</span>
+          </div>
+        </div>
+        <div class="form sign-up">
+          <h2>Time to feel like home,</h2>
+          <label>
+            <span>Name</span>
+            <input type="text" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" />
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" />
+          </label>
+          <button type="button" class="submit">Sign Up</button>
+          <button type="button" class="fb-btn">Join with <span>facebook</span></button>
+        </div>
       </div>
-      <P>By joining our Nespresso Membership, your personal data provided hereunder may be stored, processed,
-        transferred and used by Nespresso entities (including Nestlé Nespresso SA, Nestlé Hong Kong Limited), our
-        affiliate companies, our authorized service provider and/or third party for conducting profile and/or market
-        analyses. Upon registration, you have the right to request access or correct your personal data or withdraw
-        your consent at any time upon prior notice to Nespresso at the below address and contact. Please refer to
-        Nespresso's Privacy Notice at https://www.nespresso.com/hk/en/legal for more details.</P>
-      <P>Nespresso Hong Kong, Division</P>
-      <P> Nestlé Hong Kong Ltd</P>
-      <P> 7/F, Manhattan Place, 23 Wang Tai Road, Kowloon Bay, Hong Kong</P>
-    </form>
-  
+    </div>
+    <script src="./js/login.js"></script>
+      </body>
+      <!---- <script>
+               
+        function Login(){ 
+          var done=0; 
+          var phonenumber=document.login.phonenumber.value; 
+          (phonenumber=phonenumber); 
+          var password=document.login.password.value; 
+          password=password.toLowerCase(); 
+          if (username=="帳號" && password=="密碼") { window.location="登入後會出現的網站"; done=1; } 
+          if (done==0) { alert("帳號或密碼錯誤時出現的訊息"); } 
+          } 
+                  if (phonenumber=="phonenumber" && password=="password") { window.location="登入後會出現的網站"; done=1; } 
+      if (done==0) { alert("密碼不正確,請再次輸入"); } 
+       </script--->
+    </div>
   </div>
 
   <!-- Signup -->
-  <div id="signup" class="module container" style="display: none;">
-    <div class="title">Sign Up</div>
-    <form action="" form name="myForm" action="demo_form.php" onsubmit="return validateForm()"
-      method="post">
-      <div class="logo">
-        <img src="./images/login/nespresso-logo.png" alt="Avatar" style="width: 200px">
-      </div>
+  <div id="signup" class="module" style="display: none;">
+    <div class="container">
+      <div class="title">Sign Up</div>
+      <form action="https://連去後端/" form name="myForm" action="demo_form.php" onsubmit="return validateForm()"
+        method="post">
+        <div class="logo">
+          <img src="./images/login/nespresso-logo.png" alt="Avatar" style="width: 200px">
+        </div>
 
-      <span>
-        Fill the form below (fields with * are required) and create your account.
-      </span>
-      <br />
-      <div class="formbody">
-        <div class="row">
-          <div class="col-sm">
-            <b>State</b>
+        <span>
+          Fill the form below (fields with * are required) and create your account.
+        </span>
+        <br />
+        <div class="formbody">
+          <div class="row">
+            <div class="col-sm">
+              <b>State</b>
+            </div>
+            <div class="col-sm">
+              <select name=" 稱呼">
+                <option value="Mr.">Mr.</option>
+                <option value="Miss.">Miss.</option>
+                <option value="Mrs.">Mrs.</option>
+              </select>
+            </div>
           </div>
-          <div class="col-sm">
-            <select name=" 稱呼">
-              <option value="Mr.">Mr.</option>
-              <option value="Miss.">Miss.</option>
-              <option value="Mrs.">Mrs.</option>
-            </select>
+          <div class="row">
+            <div class="col-sm">
+              <B> Last name*</B>
+            </div>
+            <div class="col-sm">
+              <input type="text" placeholder="" id="lastname" required="required">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <b> First name*</b>
+            </div>
+            <div class="col-sm">
+              <input type="text" name="fname" id="firstname" required="required">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <b>E-mail address* </b>
+            </div>
+            <div class="col-sm">
+              <input type="text" name="fname" required="required" width="00px">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <b>Phone number*</b>
+            </div>
+            <div class="col-sm">
+              <input type="text" onkeyup="value=value.replace(/[^\d]/g,'')" SIZE="8" maxlength="8" name="fname"
+                required="required">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <!---------------password-------------------------------->
+              <b> New password*</b><br />
+              <p1> Password must:
+                Have at least 8 characters
+                Contain a number
+                Contain a lower case letter</p1>
+            </div>
+            <div class="col-sm">
+              <input type="password" id="password1" mixlength="8" maxlength="12" name="fname" required="required">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <b>Comfrom password*</b>
+            </div>
+            <div class="col-sm">
+              <input type="password" id="password1" mixlength="8" maxlength="12" name="fname" required="required">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <button id class="submit" value="提交">Submit</button>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm">
-            <B> Last name*</B>
-          </div>
-          <div class="col-sm">
-            <input type="text" placeholder="" id="lastname" required="required">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm">
-            <b> First name*</b>
-          </div>
-          <div class="col-sm">
-            <input type="text" name="fname" id="firstname" required="required">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm">
-            <b>E-mail address* </b>
-          </div>
-          <div class="col-sm">
-            <input type="email" name="fname" required="required" width="00px">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm">
-            <b>Phone number*</b>
-          </div>
-          <div class="col-sm">
-            <input type="text" onkeyup="value=value.replace(/[^\d]/g,'')" SIZE="8" maxlength="8" name="fname"
-              required="required">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm">
-            <!---------------password-------------------------------->
-            <b> New password*</b><br />
-            <p1> Password must:
-              Have at least 8 characters
-              </p1>
-          </div>
-          <div class="col-sm">
-            <input type="password" id="password1" mixlength="8" maxlength="12" name="fname" required="required">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm">
-            <b>Comfrom password*</b>
-          </div>
-          <div class="col-sm">
-            <input type="password" id="password1" mixlength="8" maxlength="12" name="fname" required="required">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm">
-            <button id class="submit" value="提交">Submit</button>
-          </div>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 
   <!-- Homepage -->
@@ -255,6 +300,7 @@
       <img src="./images/homepage/SET_1_Master.jpg">
     </div>
   </div>
+
   <!--About -->
   <div id="about" style="display: block;" class="module">
     <div class="title">About</div>
@@ -560,16 +606,16 @@
       <!-- Coffee-->
       <div id="card" class="card-deck">
         <div class="card card text-center">
-          <img class="card-img-top"
-            src="./images/coffee/Napoli-PLP.webp"
-            alt="Card image cap" onclick="route('coffeedetail');">
+          <img class="card-img-top" src="./images/coffee/Napoli-PLP.webp" alt="Card image cap"
+            onclick="route('productdetail');">
           <div class="card-block">
             <h5 class="card-title">NAPOLI</h5>
             <h5 class="btn btn-dark">$47</h5>
             <div class="text-left">
               <p class="card-text">Exceptionally Dark & Creamy;</p>
               <p class="card-text">The most intense and dark roast in this range;</p>
-              <p class="card-text">inspired by the capital of coffee, reveals the deep-rooted roasting traditions of Naples.;</p>
+              <p class="card-text">inspired by the capital of coffee, reveals the deep-rooted roasting traditions of
+                Naples.;</p>
               <p class="card-text">So, its depth of character should come as no surprise.;</p>
             </div>
 
@@ -579,16 +625,15 @@
         </div>
 
         <div class="card card text-center">
-          <img class="card-img-top"
-            src="./images/coffee/paris.webp"
-            alt="Card image cap" onclick="route('productdetail');">
+          <img class="card-img-top" src="./images/coffee/paris.webp" alt="Card image cap"
+            onclick="route('productdetail');">
           <div class="card-block">
             <h5 class="card-title">PARIS ESPRESSO</h5>
             <h5 class="btn btn-dark">$47</h5>
             <div class="text-left">
               <p class="card-text"> balanced coffee with light bitterness,;</p>
               <p class="card-text"> cereal biscuity notes, ;</p>
-              <p class="card-text">pleasant  and a hint of citrus.;</p>
+              <p class="card-text">pleasant and a hint of citrus.;</p>
             </div>
 
             <a href="#" data-name="ParisEspresso" data-price="47" class="add-to-cart btn btn-primary btn-dark">Buy
@@ -598,15 +643,15 @@
         </div>
 
         <div class="card card text-center">
-          <img class="card-img-top"
-            src="./images/coffee/MILANO.webp"
-            alt="Card image cap" onclick="route('productdetail');">
+          <img class="card-img-top" src="./images/coffee/MILANO.webp" alt="Card image cap"
+            onclick="route('productdetail');">
           <div class="card-block">
             <h5 class="card-title">MILANO INTENSO LIMITED EDITION</h5>
             <h5 class="btn btn-dark">$47</h5>
             <div class="text-left">
               <p class="card-text">Cocoa & Cereal;</p>
-              <p class="card-text">A classic combination of roasted-cereal and cocoa notes that alludes to bread and dark chocolate.;</p>
+              <p class="card-text">A classic combination of roasted-cereal and cocoa notes that alludes to bread and
+                dark chocolate.;</p>
               <p class="card-text"> A hint fruit and spices make this a deliciously complex blend.;</p>
             </div>
 
@@ -617,20 +662,20 @@
         </div>
 
         <div class="card card text-center">
-          <img class="card-img-top"
-            src="./images/coffee/istanbul.webp"
-            alt="Card image cap" onclick="route('productdetail');">
+          <img class="card-img-top" src="./images/coffee/istanbul.webp" alt="Card image cap"
+            onclick="route('productdetail');">
           <div class="card-block">
             <h5 class="card-title">ISTANBUL ESPRESSO</h5>
             <h5 class="btn btn-dark">$47</h5>
             <div class="text-left">
               <p class="card-text">Roasted With A Fruity Note And A Hint Of Almond;</p>
-              <p class="card-text">A complex espresso full of wild aromatics and a balance of both bitter roasted and fruity notes, ;</p>
+              <p class="card-text">A complex espresso full of wild aromatics and a balance of both bitter roasted and
+                fruity notes, ;</p>
               <p class="card-text">with a touch of acidity and an almond finish that hints at sweetnss;</p>
             </div>
 
-            <a href="#" data-name="IstanbulEspresso" data-price="47"
-              class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
+            <a href="#" data-name="IstanbulEspresso" data-price="47" class="add-to-cart btn btn-primary btn-dark">Buy
+              Now</a>
           </div>
         </div>
       </div>
@@ -638,15 +683,16 @@
       <div id="card" class="card-deck">
 
         <div class="card card text-center">
-          <img class="card-img-top"
-            src="./images/coffee/Caramel-Cr-me-Brulee.webp"
-            alt="Card image cap" onclick="route('productdetail');">
+          <img class="card-img-top" src="./images/coffee/Caramel-Cr-me-Brulee.webp" alt="Card image cap"
+            onclick="route('productdetail');">
           <div class="card-block">
             <h5 class="card-title">CARAMEL CRÈME BRULEE</h5>
             <h5 class="btn btn-dark">$52</h5>
             <div class="text-left">
-              <p class="card-text">Go ahead and dream a little. We did. The warming flavour of caramel softens the roasted notes of our most rounded and smooth espresso.;</p>
-              <p class="card-text"> Creamy notes of caramel, coconut and vanilla dance through BARISTA CREATIONS Caramel Crème Brûlée.;</p>
+              <p class="card-text">Go ahead and dream a little. We did. The warming flavour of caramel softens the
+                roasted notes of our most rounded and smooth espresso.;</p>
+              <p class="card-text"> Creamy notes of caramel, coconut and vanilla dance through BARISTA CREATIONS Caramel
+                Crème Brûlée.;</p>
             </div>
 
             <a href="#" data-name="CarmelCremeBrulee" data-price="52" class="add-to-cart btn btn-primary btn-dark">Buy
@@ -655,15 +701,15 @@
         </div>
 
         <div class="card card text-center">
-          <img class="card-img-top"
-            src="./images/coffee/INFINIMENT.webp"
-            alt="Card image cap" onclick="route('productdetail');">
+          <img class="card-img-top" src="./images/coffee/INFINIMENT.webp" alt="Card image cap"
+            onclick="route('productdetail');">
           <div class="card-block">
             <h5 class="card-title">INFINIMENT ESPRESSO</h5>
             <h5 class="btn btn-dark">$47</h5>
             <div class="text-left">
               <p class="card-text">Fruity & Cereal;</p>
-              <p class="card-text">An espresso that makes an art form of black coffee in playing with the tastes of Arabica from Tolima,;</p>
+              <p class="card-text">An espresso that makes an art form of black coffee in playing with the tastes of
+                Arabica from Tolima,;</p>
               <p class="card-text">Colombia.;</p>
             </div>
             <a href="#" data-name="InfinimentEspresso" data-price="47" class="add-to-cart btn btn-primary btn-dark">Buy
@@ -672,36 +718,37 @@
         </div>
 
         <div class="card card text-center">
-          <img class="card-img-top"
-            src="./images/coffee/BUENOS.webp"
-            alt="Card image cap" onclick="route('productdetail');">
+          <img class="card-img-top" src="./images/coffee/BUENOS.webp" alt="Card image cap"
+            onclick="route('productdetail');">
           <div class="card-block">
             <h5 class="card-title">BUENOS AIRES LUNGO</h5>
             <h5 class="btn btn-dark">$47</h5>
             <div class="text-left">
               <p class="card-text">Distinct Delight Sweet & Cereal;</p>
-              <p class="card-text">The sweet popcorn note and mild character of this Arabica and Robusta blend is a delicious complement to the vibrant city life of Buenos Aires.;</p>
-              <p class="card-text">A destination for true foodies, Buenos Aires is a highlight of Argentina’s vibrant food scene.;</p>
+              <p class="card-text">The sweet popcorn note and mild character of this Arabica and Robusta blend is a
+                delicious complement to the vibrant city life of Buenos Aires.;</p>
+              <p class="card-text">A destination for true foodies, Buenos Aires is a highlight of Argentina’s vibrant
+                food scene.;</p>
             </div>
-            <a href="#" data-name="BuenosAiresLungo" data-price="47" class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
+            <a href="#" data-name="BuenosAiresLungo" data-price="47" class="add-to-cart btn btn-primary btn-dark">Buy
+              Now</a>
           </div>
         </div>
 
         <div class="card card text-center">
-          <img class="card-img-top"
-            src="./images/coffee/TOKYO.webp"
-            alt="Card image cap" onclick="route('productdetail');">
+          <img class="card-img-top" src="./images/coffee/TOKYO.webp" alt="Card image cap"
+            onclick="route('productdetail');">
           <div class="card-block">
             <h5 class="card-title">TOKYO LUNGO</h5>
             <h5 class="btn btn-dark">$47</h5>
             <div class="text-left">
               <p class="card-text">Sips Of Elegance Floral & Complex;</p>
-              <p class="card-text">The high quality Arabicas deliver exceptional flowery aromas and complex tastes worthy of Tokyo’s refined palate.;</p>
+              <p class="card-text">The high quality Arabicas deliver exceptional flowery aromas and complex tastes
+                worthy of Tokyo’s refined palate.;</p>
               <p class="card-text">Known for tea, the Japanese also have a real affinity for coffee.;</p>
-            
+
             </div>
-            <a href="#" data-name="TokyoLungo" data-price="47"
-              class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
+            <a href="#" data-name="TokyoLungo" data-price="47" class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
           </div>
         </div>
       </div>
@@ -789,188 +836,192 @@
 
   <!-- Location -->
   <div id="location" class="module" style="display: none;">
-    <div class="title">Location</div>
-    <!--GOOGLE MAP-->
-    <div class="GOOGLEMAP">
-      <iframe src="https://www.google.com.qa/maps/d/embed?mid=1cY_77j7U-zI-g_SsozEWXGO-TUZVaTA&ehbc=2E312F" width="1024"
-        height="600" frameborder="0" style="border:0"></iframe>
+    <div class="container">
+      <div class="title">Location</div>
+      <!--GOOGLE MAP-->
+      <div class="GOOGLEMAP">
+        <iframe src="https://www.google.com.qa/maps/d/embed?mid=1cY_77j7U-zI-g_SsozEWXGO-TUZVaTA&ehbc=2E312F"
+          width="1024" height="600" frameborder="0" style="border:0"></iframe>
+      </div>
+      <br>
+      <table id="locTable">
+        <tr>
+          <th>District</th>
+          <th>Address</th>
+          <th>Tel</th>
+          <th>Opening Hours</th>
+        </tr>
+        <tr>
+          <td>Central</td>
+          <td>Shop 1058A, Podium 1, ifc Mall, Central</td>
+          <td>81011007</td>
+          <td>Mon To Sun : 11:00am-20:00pm</td>
+        </tr>
+        <tr>
+          <td>Kwun Tong</td>
+          <td>APM, Shop UC-20, 418 Kwun Tong Rd, Kwun Tong</td>
+          <td>81011007</td>
+          <td>Mon To Sun : 11:30am-20:00pm</td>
+        </tr>
+        <tr>
+          <td>Tsim Sha Tsui</td>
+          <td> Unit 31&32, Shop No. B201, Basement 2, K11 MUSEA, Victoria Dockside, 18 Salisbury Rd, Tsim Sha Tsui</td>
+          <td>81011007</td>
+          <td>Mon To Sun : 11:30am-20:00pm</td>
+        </tr>
+        <tr>
+          <td>Kowloon Tong</td>
+          <td> Shop LG2 - 70, Festival Walk 80 Tat Chee Ave, Kowloon Tong</td>
+          <td>81011007</td>
+          <td>Mon To Sun : 11:30am-20:00pm</td>
+        </tr>
+        <tr>
+          <td>Yuen Long</td>
+          <td>Shop 1056, Level 1, YOHO MALL I, 9 Long Yat Rd, Yuen Long</td>
+          <td>81011007</td>
+          <td>Mon To Sun : 11:30am-20:00pm</td>
+        </tr>
+      </table>
     </div>
-    <br>
-    <table id="locTable">
-      <tr>
-        <th>District</th>
-        <th>Address</th>
-        <th>Tel</th>
-        <th>Opening Hours</th>
-      </tr>
-      <tr>
-        <td>Central</td>
-        <td>Shop 1058A, Podium 1, ifc Mall, Central</td>
-        <td>81011007</td>
-        <td>Mon To Sun : 11:00am-20:00pm</td>
-      </tr>
-      <tr>
-        <td>Kwun Tong</td>
-        <td>APM, Shop UC-20, 418 Kwun Tong Rd, Kwun Tong</td>
-        <td>81011007</td>
-        <td>Mon To Sun : 11:30am-20:00pm</td>
-      </tr>
-      <tr>
-        <td>Tsim Sha Tsui</td>
-        <td> Unit 31&32, Shop No. B201, Basement 2, K11 MUSEA, Victoria Dockside, 18 Salisbury Rd, Tsim Sha Tsui</td>
-        <td>81011007</td>
-        <td>Mon To Sun : 11:30am-20:00pm</td>
-      </tr>
-      <tr>
-        <td>Kowloon Tong</td>
-        <td> Shop LG2 - 70, Festival Walk 80 Tat Chee Ave, Kowloon Tong</td>
-        <td>81011007</td>
-        <td>Mon To Sun : 11:30am-20:00pm</td>
-      </tr>
-      <tr>
-        <td>Yuen Long</td>
-        <td>Shop 1056, Level 1, YOHO MALL I, 9 Long Yat Rd, Yuen Long</td>
-        <td>81011007</td>
-        <td>Mon To Sun : 11:30am-20:00pm</td>
-      </tr>
-    </table>
   </div>
 
   <!--FAQs -->
   <div id="faqs" class="module" style="display: none;">
-    <div class="title">FAQ</div>
-    <div class="accordion">
-      <div class="accordion-item" id="question1">
-        <a class="accordion-link" href="#question1">
-          How do I qualify for NESPRESSO & YOU?
-          <i class="fa-solid fa-square-plus"></i>
-          <i class="fa-solid fa-square-minus"></i>
-        </a>
-        <div class="answer">
-          <p>You are automatically enrolled into this program when you make a coffee purchase with your Nespresso
-            account, directly from Nespresso Boutiques, Nespresso Online Boutique, Mobile App, or our Customer
-            Service Hotline from 08:00am to 10:00pm.</p>
+    <div class="container">
+      <div class="title">FAQ</div>
+      <div class="accordion">
+        <div class="accordion-item" id="question1">
+          <a class="accordion-link" href="#question1">
+            How do I qualify for NESPRESSO & YOU?
+            <i class="fa-solid fa-square-plus"></i>
+            <i class="fa-solid fa-square-minus"></i>
+          </a>
+          <div class="answer">
+            <p>You are automatically enrolled into this program when you make a coffee purchase with your Nespresso
+              account, directly from Nespresso Boutiques, Nespresso Online Boutique, Mobile App, or our Customer
+              Service Hotline from 08:00am to 10:00pm.</p>
+          </div>
         </div>
-      </div>
-      <div class="accordion-item" id="question2">
-        <a class="accordion-link" href="#question2">
-          What is NESPRESSO & YOU?
-          <i class="fa-solid fa-square-plus"></i>
-          <i class="fa-solid fa-square-minus"></i>
-        </a>
-        <div class="answer">
-          <p>NESPRESSO & YOU is our new way of caring for you, with a series of benefits and rewards for all our
-            members. Progress through the membership tiers to enjoy more benefits with us, either through your time
-            with us (seniority) OR be accelerated up the tier by reaching the indicated consumption level.</p>
+        <div class="accordion-item" id="question2">
+          <a class="accordion-link" href="#question2">
+            What is NESPRESSO & YOU?
+            <i class="fa-solid fa-square-plus"></i>
+            <i class="fa-solid fa-square-minus"></i>
+          </a>
+          <div class="answer">
+            <p>NESPRESSO & YOU is our new way of caring for you, with a series of benefits and rewards for all our
+              members. Progress through the membership tiers to enjoy more benefits with us, either through your time
+              with us (seniority) OR be accelerated up the tier by reaching the indicated consumption level.</p>
+          </div>
         </div>
-      </div>
-      <div class="accordion-item" id="question3">
-        <a class="accordion-link" href="#question3">
-          What are the maintenance tips when I first use my Vertuo machine?
-          <i class="fa-solid fa-square-plus"></i>
-          <i class="fa-solid fa-square-minus"></i>
-        </a>
-        <div class="answer">
-          <ul>
-            <li>Read the safety precautions carefully before using your new appliance for the first time. Keep them
-              in a place where you can find and refer to them later on.</li>
-            <li>Please set the water hardness to soft (via connectivity) when first use or after factory reset.</li>
-            <li>Please re-fill the water tank with fresh portable water at room temperature. Do not use hot water.
-            </li>
-            <li>Always lock the system completely and never open it during operation.</li>
-            <li>Please eject the capsule right after brewing each time.</li>
-            <li>Water may accumulate inside the machine’s head, please dry visible parts with a clean dry cloth.
-            </li>
-          </ul>
+        <div class="accordion-item" id="question3">
+          <a class="accordion-link" href="#question3">
+            What are the maintenance tips when I first use my Vertuo machine?
+            <i class="fa-solid fa-square-plus"></i>
+            <i class="fa-solid fa-square-minus"></i>
+          </a>
+          <div class="answer">
+            <ul>
+              <li>Read the safety precautions carefully before using your new appliance for the first time. Keep them
+                in a place where you can find and refer to them later on.</li>
+              <li>Please set the water hardness to soft (via connectivity) when first use or after factory reset.</li>
+              <li>Please re-fill the water tank with fresh portable water at room temperature. Do not use hot water.
+              </li>
+              <li>Always lock the system completely and never open it during operation.</li>
+              <li>Please eject the capsule right after brewing each time.</li>
+              <li>Water may accumulate inside the machine’s head, please dry visible parts with a clean dry cloth.
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="accordion-item" id="question4">
-        <a class="accordion-link" href="#question4">
-          Why is the ring light on my machine blinking orange and white alternatively 3 times and then steady on?
-          <i class="fa-solid fa-square-plus"></i>
-          <i class="fa-solid fa-square-minus"></i>
-        </a>
-        <div class="answer">
-          <p>All our Vertuo coffee machines are equipped with a descaling alert. We recommend descaling your machine
-            every 3 months or after 300 capsules, whichever comes first. Over time, water used during brewing may
-            cause internal mineral build up, which can affect the flow, temperature and overall performance of your
-            machine.</p>
+        <div class="accordion-item" id="question4">
+          <a class="accordion-link" href="#question4">
+            Why is the ring light on my machine blinking orange and white alternatively 3 times and then steady on?
+            <i class="fa-solid fa-square-plus"></i>
+            <i class="fa-solid fa-square-minus"></i>
+          </a>
+          <div class="answer">
+            <p>All our Vertuo coffee machines are equipped with a descaling alert. We recommend descaling your machine
+              every 3 months or after 300 capsules, whichever comes first. Over time, water used during brewing may
+              cause internal mineral build up, which can affect the flow, temperature and overall performance of your
+              machine.</p>
+          </div>
         </div>
-      </div>
-      <div class="accordion-item" id="question5">
-        <a class="accordion-link" href="#question5">
-          I’m looking for a coffee machine for my office. Where can I buy one?
-          <i class="fa-solid fa-square-plus"></i>
-          <i class="fa-solid fa-square-minus"></i>
-        </a>
-        <div class="answer">
-          <p>You can find all of the various coffee machines for offices on our <a href="">website</a>. You can
-            compare different models and choose the one that suits your company’s needs best. You can also request a
-            demonstration online. If you need any additional information, you can complete the online form and send
-            your request to us, or contact our Coffee Specialists by phone on 8101 1183.</p>
+        <div class="accordion-item" id="question5">
+          <a class="accordion-link" href="#question5">
+            I’m looking for a coffee machine for my office. Where can I buy one?
+            <i class="fa-solid fa-square-plus"></i>
+            <i class="fa-solid fa-square-minus"></i>
+          </a>
+          <div class="answer">
+            <p>You can find all of the various coffee machines for offices on our <a href="">website</a>. You can
+              compare different models and choose the one that suits your company’s needs best. You can also request a
+              demonstration online. If you need any additional information, you can complete the online form and send
+              your request to us, or contact our Coffee Specialists by phone on 8101 1183.</p>
+          </div>
         </div>
-      </div>
-      <div class="accordion-item" id="question6">
-        <a class="accordion-link" href="#question6">
-          How often should I descale my Nespresso machine?
-          <i class="fa-solid fa-square-plus"></i>
-          <i class="fa-solid fa-square-minus"></i>
-        </a>
-        <div class="answer">
-          <p>In order to keep your Nespresso machine in optimal condition, you are advised to descale your machine
-            after every 400 to 600 capsules or at least 2 times a year. The harder the water is in the area where
-            you live, the more often you will need to descale your Nespresso machine. Water residue and limescale
-            can accumulate within the system. This may not only affect the temperature, flow and quality of your
-            espressos, but also shorten the life of your machine.</p>
+        <div class="accordion-item" id="question6">
+          <a class="accordion-link" href="#question6">
+            How often should I descale my Nespresso machine?
+            <i class="fa-solid fa-square-plus"></i>
+            <i class="fa-solid fa-square-minus"></i>
+          </a>
+          <div class="answer">
+            <p>In order to keep your Nespresso machine in optimal condition, you are advised to descale your machine
+              after every 400 to 600 capsules or at least 2 times a year. The harder the water is in the area where
+              you live, the more often you will need to descale your Nespresso machine. Water residue and limescale
+              can accumulate within the system. This may not only affect the temperature, flow and quality of your
+              espressos, but also shorten the life of your machine.</p>
+          </div>
         </div>
-      </div>
-      <div class="accordion-item" id="question7">
-        <a class="accordion-link" href="#question7">
-          I have purchased a descaling kit for another type of Nespresso machine. Can I use it anyway?
-          <i class="fa-solid fa-square-plus"></i>
-          <i class="fa-solid fa-square-minus"></i>
-        </a>
-        <div class="answer">
-          <p>The fluid in our descaling kits are identical, so you can use the set with another Nespresso machine as
-            well. You must ensure, however, that you follow the appropriate descaling instructions for your machine.
-          </p>
+        <div class="accordion-item" id="question7">
+          <a class="accordion-link" href="#question7">
+            I have purchased a descaling kit for another type of Nespresso machine. Can I use it anyway?
+            <i class="fa-solid fa-square-plus"></i>
+            <i class="fa-solid fa-square-minus"></i>
+          </a>
+          <div class="answer">
+            <p>The fluid in our descaling kits are identical, so you can use the set with another Nespresso machine as
+              well. You must ensure, however, that you follow the appropriate descaling instructions for your machine.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="accordion-item" id="question8">
-        <a class="accordion-link" href="#question8">
-          Can I bring my Nespresso machine abroad?
-          <i class="fa-solid fa-square-plus"></i>
-          <i class="fa-solid fa-square-minus"></i>
-        </a>
-        <div class="answer">
-          <p>The Nespresso machine range is specifically designed to meet precise power regulations for each
-            geographical region. The machines sold for Hong Kong operate on 220-240V, 50/60Hz only. When using a
-            machine with these specifications in another country, or vice versa, there is no guarantee that it will
-            operate properly. Machines can be irreparably damaged when used in foreign countries.</p>
+        <div class="accordion-item" id="question8">
+          <a class="accordion-link" href="#question8">
+            Can I bring my Nespresso machine abroad?
+            <i class="fa-solid fa-square-plus"></i>
+            <i class="fa-solid fa-square-minus"></i>
+          </a>
+          <div class="answer">
+            <p>The Nespresso machine range is specifically designed to meet precise power regulations for each
+              geographical region. The machines sold for Hong Kong operate on 220-240V, 50/60Hz only. When using a
+              machine with these specifications in another country, or vice versa, there is no guarantee that it will
+              operate properly. Machines can be irreparably damaged when used in foreign countries.</p>
+          </div>
         </div>
-      </div>
-      <div class="accordion-item" id="question9">
-        <a class="accordion-link" href="#question9">
-          Can I trade in my machine?
-          <i class="fa-solid fa-square-plus"></i>
-          <i class="fa-solid fa-square-minus"></i>
-        </a>
-        <div class="answer">
-          <p>This program is currently not offered by Nespresso Hong Kong.</p>
+        <div class="accordion-item" id="question9">
+          <a class="accordion-link" href="#question9">
+            Can I trade in my machine?
+            <i class="fa-solid fa-square-plus"></i>
+            <i class="fa-solid fa-square-minus"></i>
+          </a>
+          <div class="answer">
+            <p>This program is currently not offered by Nespresso Hong Kong.</p>
+          </div>
         </div>
-      </div>
-      <div class="accordion-item" id="question10">
-        <a class="accordion-link" href="#question10">
-          My machine switches itself off after a while.
-          <i class="fa-solid fa-square-plus"></i>
-          <i class="fa-solid fa-square-minus"></i>
-        </a>
-        <div class="answer">
-          <p>Our machines are equipped with an ‘OFF mode’, which means that the machines turn themselves off when
-            inactive to minimise energy use.
-            <br>Pixie/U/Inissia machines switch themselves OFF automatically after 9 min (factory settings). This
-            time can be changed to 30 min.
-          </p>
+        <div class="accordion-item" id="question10">
+          <a class="accordion-link" href="#question10">
+            My machine switches itself off after a while.
+            <i class="fa-solid fa-square-plus"></i>
+            <i class="fa-solid fa-square-minus"></i>
+          </a>
+          <div class="answer">
+            <p>Our machines are equipped with an ‘OFF mode’, which means that the machines turn themselves off when
+              inactive to minimise energy use.
+              <br>Pixie/U/Inissia machines switch themselves OFF automatically after 9 min (factory settings). This
+              time can be changed to 30 min.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -978,117 +1029,114 @@
 
   <!-- ProductDetail -->
   <div id="productdetail" class="module" style="display: none">
-    <div class="card">
-      <div class="card__title">
-        <div class="icon">
-          <a href="#"><i class="fa fa-arrow-left"></i></a>
-        </div>
-        <h3>New products</h3>
-      </div>
-      <div class="card__body">
-        <div class="half">
-          <div class="featured_text">
-            <h1>Pixie</h1>
-            <p class="sub">Pixie Electric Red Coffee Machine</p>
-            <p class="price">$1188.00</p>
+    <div class="container">
+      <div class="title"></div>
+      <div class="card">
+        <div class="card__title" onclick="route('machines')">
+          <div class="icon">
+            <a href="#"><i class="fa fa-arrow-left"></i></a>
           </div>
+          <h3>New products</h3>
+        </div>
+        <div class="card__body">
+          <div class="half">
+            <div class="featured_text">
+              <h1>Pixie</h1>
+              <p class="sub">Pixie Electric Red Coffee Machine</p>
+              <p class="price">$1188.00</p>
+            </div>
 
-          <div id="slider-wrapper">
-            <div class="inner-wrapper">
-              <input checked type="radio" name="slide" class="control" id="Slide1"/>
-              <label for="Slide1" id="s1"></label>
-              <input type="radio" name="slide" class="control" id="Slide2" />
-              <label for="Slide2" id="s2"></label>
-              <input type="radio" name="slide" class="control" id="Slide3" />
-              <label for="Slide3" id="s3"></label>
-              <input type="radio" name="slide" class="control" id="Slide4" />
-              <label for="Slide4" id="s4"></label>
-              <div class="overflow-wrapper">
-                <a class="slide" href=""
-                  ><img src="./images/machines/Pixie.jpg"
-                /></a>
-                <a class="slide" href=""
-                  ><img src="./images/machines/Pixie_face.jpg"
-                /></a>
-                <a class="slide" href=""
-                  ><img src="./images/machines/Pixie_side.jpg"
-                /></a>
-                <a class="slide" href=""
-                  ><img src="./images/machines/Pixie_top.jpg"
-                /></a>
+            <div id="slider-wrapper">
+              <div class="inner-wrapper">
+                <input checked type="radio" name="slide" class="control" id="Slide1" />
+                <label for="Slide1" id="s1"></label>
+                <input type="radio" name="slide" class="control" id="Slide2" />
+                <label for="Slide2" id="s2"></label>
+                <input type="radio" name="slide" class="control" id="Slide3" />
+                <label for="Slide3" id="s3"></label>
+                <input type="radio" name="slide" class="control" id="Slide4" />
+                <label for="Slide4" id="s4"></label>
+                <div class="overflow-wrapper">
+                  <a class="slide" href=""><img src="./images/machines/Pixie.jpg" /></a>
+                  <a class="slide" href=""><img src="./images/machines/Pixie_face.jpg" /></a>
+                  <a class="slide" href=""><img src="./images/machines/Pixie_side.jpg" /></a>
+                  <a class="slide" href=""><img src="./images/machines/Pixie_top.jpg" /></a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="half">
-          <div class="description">
-            
-            <p>
-              Straight from the design studio, the Nespresso Pixie machine will
-              please those who like an industrial style with its hammered metal
-              sides. And thanks to its high-pressure pump and fast heat-up
-              system, it provides Nespresso quality coffee in a simple and
-              hasslefree way. Because good things are made to last.
-            </p>
-          </br></br>
-            <p>
-              <strong><b> KEY FEATURES</b></strong>
-            </p>
-            <p>Auto off</p>
-            <p>Pixie is fast</p>
-            <p>Coffee size Espresso & Lungo</p>
-            <p>Fast heat</p>
-            <p>Pixle is ergonomic</p>
-    
-            </br>
+          <div class="half">
+            <div class="description">
+
               <p>
-              <strong><b> Available colors:</b></strong>
+                Straight from the design studio, the Nespresso Pixie machine will
+                please those who like an industrial style with its hammered metal
+                sides. And thanks to its high-pressure pump and fast heat-up
+                system, it provides Nespresso quality coffee in a simple and
+                hasslefree way. Because good things are made to last.
               </p>
-            
-            <div class="color-dot">
-              <span class="dot"></span>
-              <span class="dot-1"></span>
+              </br></br>
+              <p>
+                <strong><b> KEY FEATURES</b></strong>
+              </p>
+              <p>Auto off</p>
+              <p>Pixie is fast</p>
+              <p>Coffee size Espresso & Lungo</p>
+              <p>Fast heat</p>
+              <p>Pixle is ergonomic</p>
+
+              </br>
+              <p>
+                <strong><b> Available colors:</b></strong>
+              </p>
+
+              <div class="color-dot">
+                <span class="dot"></span>
+                <span class="dot-1"></span>
+              </div>
+            </div>
+            <span class="stock"><i class="fa fa-pen"></i> In stock</span>
+            <div class="reviews">
+              <ul class="stars">
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star-o"></i></li>
+              </ul>
+              <span>(64 reviews)</span>
             </div>
           </div>
-          <span class="stock"><i class="fa fa-pen"></i> In stock</span>
-          <div class="reviews">
-            <ul class="stars">
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star-o"></i></li>
-            </ul>
-            <span>(64 reviews)</span>
+        </div>
+        <div class="card__footer">
+          <div class="recommend">
+            <p>Recommended by</p>
+            <h3>Andrew Palmer</h3>
+          </div>
+          <div class="action">
+            <button type="button" data-name="Pixie" data-price="1188" class="add-to-cart">Add to cart</button>
           </div>
         </div>
       </div>
-      <div class="card__footer">
-        <div class="recommend">
-          <p>Recommended by</p>
-          <h3>Andrew Palmer</h3>
-        </div>
-        <div class="action">
-          <button type="button">Add to cart</button>
-        </div>
-      </div>
-    </div>
-  
+
       <div class="btn-group-lg">
-        <button class="btn tablink" onclick="openCity(event,'specifications')">DESCRIPTION</button>
+        <button class="btn tablink w3-red" onclick="openCity(event,'specifications')">DESCRIPTION</button>
         <button class="btn tablink" onclick="openCity(event,'reviews')">REVIEWS</button>
       </div>
       <div id="specifications" class="card2 city">
         <h5><strong>Functionality in a compact design</strong> </h5>
-          <p>Industrial looks for a crafted coffee experience.The Nespresso Pixie coffee machine packs a wide range of innovative,advanced
-            features into a surprisingly small enclosure.Straight from the design studio,the Nespresso Pixie machine will please those who like an 
-            Industrial style with its hammered metal sides.And thanks to its high-pressure pump and fast heat-up system,it provides Nespresso
-            quality coffee in a simple and hasslefree way.Because good things are made to last.
-          </p>
-          <br>
-          <div class="card2">
-            <div class="description">
-            <h5><strong>Specifications</strong></h5>
+        <p>Industrial looks for a crafted coffee experience.The Nespresso Pixie coffee machine packs a wide range of
+          innovative,advanced
+          features into a surprisingly small enclosure.Straight from the design studio,the Nespresso Pixie machine will
+          please those who like an
+          Industrial style with its hammered metal sides.And thanks to its high-pressure pump and fast heat-up system,it
+          provides Nespresso
+          quality coffee in a simple and hasslefree way.Because good things are made to last.
+        </p>
+        <br>
+        <div class="card2">
+          <div class="description">
+            <h4><strong>Specifications</strong></h4><br />
             <p>Weight:2.8kg</p>
             <p>Height:23.5cm</p>
             <p>Removable water tank:0.7L</p>
@@ -1104,62 +1152,75 @@
             <p>Cable storage</p>
             <p>Automatic power off after 9 mins</p>
             <p>Fast heat-up</p>
-            </div>
-          </div>
-      </div>
-      
-      <div id="reviews" class="card2 city" style="display:none">
-        <div class="description">
-          <h5><strong>Share your experience with us</strong></h5>
-           <p>Read our Club Member ratings and write your own review.Your opinions are critical for
-        people who are considering this Nespresso machine.With your feedback,we will continue
-        to innovate and provide A Cup Above.If you have any questions regarding your Nespresso
-        machine,please contact the Nespresso Club for immediatetechanical assistance at 81011007
-            (Hong Kong)/0800846(Macau)</p>
-           </br>
-      
-          <div class="card2">
-            <div class="description">
-            <h5><strong>Welcome to share your review</strong></h5>
-            <fieldset class="rating" id="rating">
-              <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-              <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-              <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-              <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-              <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-              <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-              <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-              <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-              <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-              <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-            </fieldset>
-        
-            </br></br>
-            <p>4 average based on (64 reviews).</p>
-              <!--------------comment-------------->
-               <from action="" id class="comment" method="post">
-          <div>
-          <textarea name="comments"  id class="commentbox"
-          style="font-family:sans-serif;font-size:1.2em;">Comment</textarea>"
-          </div>
-          <button type="submit" class="btn btn-outline-dark" value="Submit">Submit</button>
-               </from>
-        
-          </div>
           </div>
         </div>
       </div>
+
+      <div id="reviews" class="card2 city" style="display:none">
+        <div class="description">
+          <h5><strong>Share your experience with us</strong></h5>
+          <p>Read our Club Member ratings and write your own review.Your opinions are critical for
+            people who are considering this Nespresso machine.With your feedback,we will continue
+            to innovate and provide A Cup Above.If you have any questions regarding your Nespresso
+            machine,please contact the Nespresso Club for immediatetechanical assistance at 81011007
+            (Hong Kong)/0800846(Macau)</p>
+          </br>
+
+          <div class="card2">
+            <div class="description">
+              <h5><strong>Welcome to share your review</strong></h5>
+              <fieldset class="rating" id="rating">
+                <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5"
+                  title="Awesome - 5 stars"></label>
+                <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half"
+                  for="star4half" title="Pretty good - 4.5 stars"></label>
+                <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4"
+                  title="Pretty good - 4 stars"></label>
+                <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half"
+                  for="star3half" title="Meh - 3.5 stars"></label>
+                <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3"
+                  title="Meh - 3 stars"></label>
+                <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half"
+                  for="star2half" title="Kinda bad - 2.5 stars"></label>
+                <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2"
+                  title="Kinda bad - 2 stars"></label>
+                <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half"
+                  for="star1half" title="Meh - 1.5 stars"></label>
+                <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1"
+                  title="Sucks big time - 1 star"></label>
+                <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf"
+                  title="Sucks big time - 0.5 stars"></label>
+              </fieldset>
+
+              </br></br>
+              <p>4 average based on (64 reviews).</p>
+              <!--------------comment-------------->
+              <from action="" id="comment" method="post">
+                <div>
+                  <textarea name="comments" id class="commentbox"
+                    style="font-family:sans-serif;font-size:1.2em;">Comment</textarea>"
+                </div>
+                <div class="action">
+                  <button type="button" value="submit">Submit</button>
+                </div>
+              </from>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  
-  <!-- CheckoutList --> 
+  <!-- CheckoutList -->
   <div id="checkout" class="module" style="display: none">
-    <div class="title">Checkout</div>
+    <div class="container">
+      <div class="title">Checkout</div>
       <form action="">
-      <!-- Shopping Cart Details -->
-      <div class="row">
-        <div class="form-group col-8">
-        <h2 class="heading">Shopping Cart Details</h2>
+        <!-- Shopping Cart Details -->
+        <div class="row">
+          <div class="form-group col-8">
+            <h2 class="heading">Shopping Cart Details</h2>
             <div class="basket row text-center">
               <div class="col">
                 Item
@@ -1174,112 +1235,146 @@
                 Subtotal
               </div>
             </div>
-         
+
             <table class="show-cart table">
             </table>
-          <h2 class="heading">Total price: $<span class="total-cart"></span></h2>
-        </div>
-        <!--  Payment -->
-        <div class="form-group col-4">
-        <h2 class="heading">Shipping</h2>
-        
-        <div class="controls">
-            <input type="text" id="checkouefullname" class="floatLabel" pattern="[a-zA-Z]+" maxlength="30" name="name">
-            <label for="name"><i class="fa fa-user icon"></i>Full Name</label> 
-        </div>
-        
-        <div class="controls">
-            <input type="text" id="checkoutemail" class="floatLabel" name="email">
-            <label for="email"><i class="fa fa-envelope icon" ></i>Email</label>  
-        </div>
+            <h2 class="heading">Total price: $<span class="total-cart"></span></h2>
+          </div>
+          <!--  Payment -->
+          <div class="form-group col-4">
+            <h2 class="heading">Shipping</h2>
 
-        <div class="controls">
-            <input type="text" id="checkoutaddress" class="floatLabel" name="name">
-            <label for="address"><i class="fa fa-marker icon" aria-hidden="true"></i>Address</label>  
-        </div>
+            <div class="controls">
+              <input type="text" id="checkouefullname" class="floatLabel" pattern="[a-zA-Z]+" maxlength="30"
+                name="name">
+              <label for="name"><i class="fa fa-user icon"></i>Full Name</label>
+            </div>
 
-        <div class="controls">
-            <input type="text" id="checkoutcity" class="floatLabel" name="name">
-            <label for="city"><i class="fa fa-institution icon" aria-hidden="true"></i>City</label>  
-        </div>
+            <div class="controls">
+              <input type="text" id="checkoutemail" class="floatLabel" name="email">
+              <label for="email"><i class="fa fa-envelope icon"></i>Email</label>
+            </div>
 
-        <h2 class="heading">Payment Details</h2>
-        <div class="input_box" id="radiobutton">
-            <input type="radio" name="pay" class="radio" id="bc1">
-            <label for="bc1">
-              <span><i class="fa fa-cc-visa"></i> Credit Card</span></label>
-            <input type="radio" name="pay" class="radio" id="bc2">
-            <label for="bc2">
-              <span><i class="fa fa-cc-paypal"></i> Paypal</span></label>
-        </div>
+            <div class="controls">
+              <input type="text" id="checkoutaddress" class="floatLabel" name="name">
+              <label for="address"><i class="fa fa-marker icon" aria-hidden="true"></i>Address</label>
+            </div>
 
-        <div class="controls">
-            <input type="tel" id="checkoutcardnumber" class="floatLabel" name="name">
-            <label for="cardnumber"><i class="fa fa-credit-card icon"></i>No. 1111-2222-3333-4444</label>  
-        </div>
+            <div class="controls">
+              <input type="text" id="checkoutcity" class="floatLabel" name="name">
+              <label for="city"><i class="fa fa-institution icon" aria-hidden="true"></i>City</label>
+            </div>
 
-        <div class="controls">
-            <input type="tel" id="checkoutcardnumbercvc" class="floatLabel" name="name">
-            <label for="cardnumbercvc"><i class="fa fa-user icon"></i>Card CVC XXX</label>  
-        </div>
+            <h2 class="heading">Payment Details</h2>
+            <div class="input_box" id="radiobutton">
+              <input type="radio" name="pay" class="radio" id="bc1">
+              <label for="bc1">
+                <span><i class="fa fa-cc-visa"></i> Credit Card</span></label>
+              <input type="radio" name="pay" class="radio" id="bc2">
+              <label for="bc2">
+                <span><i class="fa fa-cc-paypal"></i> Paypal</span></label>
+            </div>
 
-        <div class="controls">
-            <input type="text" id="checkoutcardexpire" class="floatLabel" name="name" maxlength='5' onkeyup="formatString(event);">
-            <label for="checkoutcardexpire"><i class="fa fa-calendar icon"></i>MM / YY</label>  
-        </div>
-      
-        <div class="input_box">
-            <button class="btn" onclick="openPopup();">Pay Now</button>
-       
-        </div>
+            <div class="controls">
+              <input type="tel" id="checkoutcardnumber" class="floatLabel" name="name">
+              <label for="cardnumber"><i class="fa fa-credit-card icon"></i>No. 1111-2222-3333-4444</label>
+            </div>
 
-        <div class="popup" id="popup">
-          <h2>Thank You!</h2>
-          <p>Your details has been successfully submitted. Thanks!</p>
-          <button type="button" onclick="route('homepage'); closePopup();">OK</button>
+            <div class="controls">
+              <input type="tel" id="checkoutcardnumbercvc" class="floatLabel" name="name">
+              <label for="cardnumbercvc"><i class="fa fa-user icon"></i>Card CVC XXX</label>
+            </div>
+
+            <div class="controls">
+              <input type="text" id="checkoutcardexpire" class="floatLabel" name="name" maxlength='5'
+                onkeyup="formatString(event);">
+              <label for="checkoutcardexpire"><i class="fa fa-calendar icon"></i>MM / YY</label>
+            </div>
+
+            <div class="input_box">
+              <button class="btn" onclick="openPopup();">Pay Now</button>
+
+            </div>
+
+            <div class="popup" id="popup">
+              <h2>Thank You!</h2>
+              <p>Your details has been successfully submitted. Thanks!</p>
+              <button type="button" onclick="route('homepage'); closePopup();">OK</button>
+            </div>
+            <script>
+              let popup = document.getElementById("popup");
+              function openPopup() {
+                popup.classList.add("open-popup");
+              }
+              function closePopup() {
+                popup.classList.remove("open-popup");
+              }
+            </script>
+          </div>
         </div>
-        <script>
-          let popup = document.getElementById("popup");
-          function openPopup(){
-          popup.classList.add("open-popup");
-          }
-          function closePopup(){
-          popup.classList.remove("open-popup");
-          }
-        </script>       
-        </div>
-      </div>
       </form>
-     
+    </div>
   </div>
 
-</body>
+  <!-- chatbox -->
+  <div id="chatbox" class="module">
+  <div class="chatbox-wrapper">
+		<div class="chatbox-toggle">
+		<i class="fa-solid fa-headset"></i>
+		</div>
+		<div class="chatbox-message-wrapper">
+			<div class="chatbox-message-header">
+				<div class="chatbox-message-profile">
+					<img src="./images/login/nespresso-logo.png" alt="" class="chatbox-message-image">
+					<div>
+						<h4 class="chatbox-message-name">Customer Service 001</h4>
+						<p class="chatbox-message-status">Online</p>
+					</div>
+				</div>
+				<div class="chatbox-message-dropdown">
+					<i class='chatbox-message-dropdown-toggle'></i>					
+				</div>
+			</div>
+			<div class="chatbox-message-content">
+				<h4 class="chatbox-message-no-message">Thanks for getting in touch.<br>How can I help you today?<i class="fas fa-mug-hot"></i></h4>
+			</div>
+			<div class="chatbox-message-bottom">
+				<form action="#" class="chatbox-message-form">
+					<textarea rows="1" placeholder="Type message..." class="chatbox-message-input"></textarea>
+					<button type="submit" class="chatbox-message-submit"><i class="bx bx-send"></i></button>
+				</form>
+			</div>
+		</div>
+	</div>
+  <script type="text/javascript" src="./js/chatbox.js"></script>
+  </div>
 
-<!-- footer -->
-  <div id="footer" class="module" >
-<footer class="site-footer">
+  <!-- footer -->
+  <div id="footer">
+    <footer class="site-footer">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-6">
             <h6>Newletter</h6>
-            <input type="email"  placeholder="Your email address here"/>
-              <button class="btn-outline-dark" id="subscribe">Subscribe</button>
+            <input type="email" placeholder="Your email address here" />
+            <button class="btn-outline-dark" id="subscribe">Subscribe</button>
           </div>
 
           <div class="col-xs-4 col-md-3">
             <h6>Links</h6>
             <ul class="footer-links">
-             <li><a href="#" on click="route('about')">About Us</a></li>
-             <li><a href="#" on click="route('machine')">Our Machines</a></li>
-              <li><a href="#" on click="route('coffee')">Our Coffee</a></li></ul>
+              <li><a href="#" onclick="route('about')">About Us</a></li>
+              <li><a href="#" onclick="route('machine')">Our Machines</a></li>
+              <li><a href="#" onclick="route('coffee')">Our Coffee</a></li>
+            </ul>
           </div>
 
           <div class="col-xs-4 col-md-3">
             <h6>&nbsp</h6>
             <ul class="footer-links">
-              <li><a href="#" on click="route('reservation')">Reservation</a></li>
-              <li><a href="#" on click="route('location')">Sitemap</a></li> 
-              <li><a href="#" on click="route('faqs')">FAQs</a></li>
+              <li><a href="#" onclick="route('reservation')">Reservation</a></li>
+              <li><a href="#" onclick="route('location')">Location</a></li>
+              <li><a href="#" onclick="route('faqs')">FAQs</a></li>
             </ul>
           </div>
         </div>
@@ -1288,8 +1383,8 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by 
-         <a href="#">ProjectBros</a>.
+            <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+              <a href="#">ProjectBros</a>.
             </p>
           </div>
 
@@ -1298,11 +1393,13 @@
               <li><a class="facebook" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
               <li><a class="twitter" href="http://www.twitter.com/"><i class="fa fa-twitter"></i></a></li>
               <li><a class="instagram" href="http://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
-              <li><a class="linkedin" href="http://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>   
+              <li><a class="linkedin" href="http://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
             </ul>
           </div>
         </div>
       </div>
-</footer>
-</div>
+    </footer>
+  </div>
+</body>
+
 </html>
