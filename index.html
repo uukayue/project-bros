@@ -19,6 +19,8 @@
   <script src="https://kit.fontawesome.com/5d71566990.js" crossorigin="anonymous"></script>
   <script
     src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+  <script type="text/javascript" src="./data.json"></script>
+
 
   <!-- Customize -->
   <script type="text/javascript" src="./js/index.js"></script>
@@ -26,6 +28,8 @@
   <script type="text/javascript" src="./js/signup.js"></script>
   <script type="text/javascript" src="./js/productdetail.js"></script>
   <script type="text/javascript" src="./js/Payment.js"></script>
+  <script type="text/javascript" src="./js/chatbot.js"></script>
+
   <link rel="stylesheet" href="./content/checkout.css" />
   <link rel="stylesheet" href="./content/main.css" />
   <link rel="stylesheet" href="./content/reservation.css" />
@@ -37,19 +41,11 @@
   <link rel="stylesheet" href="./content/product.css" />
   <link rel="stylesheet" href="./content/shoppingCart.css" />
   <link rel="stylesheet" href="./content/signup.css" />
-  <link rel="stylesheet" href="./content/chatbox.css" />
-  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./content/chatbot.css" />
+  <link rel="stylesheet" href="./content/recipes.css" />
   <link rel="stylesheet" href="./content/footer.css" />
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
-  <!-- <script>
-          function validateForm() {
-              var x = document.forms["myForm"]["fname"].value;
-              if (x == null || x == "") {
-                  alert("需要输入名字。");
-                  return false;
-              }
-          }
-    </script>-->
   <title>Nespresso</title>
 </head>
 
@@ -72,11 +68,7 @@
         <!-- LogInLink -->
         <a class="nav-link" href="#">
           <button class="btn btn-outline-dark" type="button" onclick="route('login');"><i
-              class="fa fa-fw fa-user"></i>Log In</button></a>
-        <!-- SignUpLink -->
-        <a class="nav-link" href="#">
-          <button class="btn btn-outline-dark" type="button" onclick="route('signup');"><i
-              class="fa fa-fw fa-pen"></i>Sign Up</button></a>
+              class="fa fa-fw fa-user"></i>Log In/Sign Up</button></a>
         <!-- ShoppingCartLink -->
         <div class="shopping-cart">
           <a class="nav-link" herf="#" data-toggle="modal" data-target="#cart">
@@ -88,11 +80,11 @@
       </div>
 
       <!-- SlideMenu -->
-      <div class="menu-items" id="slidemenu" onmouseleave="hide();">
+      <div class="menu-items" id="slidemenu" onmouseleave="$('#checkbox').prop('checked', false);">
         <li><a href="#" onclick="route('about');">About Us</a></li>
         <li><a href="#" onclick="route('machines');">Our Machines</a></li>
         <li><a href="#" onclick="route('coffee');">Our Capsules</a></li>
-        <li><a href="#" onclick="route('receipes');">Receipes</a></li>
+        <li><a href="#" onclick="route('recipes');">Recipes</a></li>
         <li><a href="#" onclick="route('reservation');">Reservation</a></li>
         <li><a href="#" onclick="route('location');">Location</a></li>
         <li><a href="#" onclick="route('faqs');">FAQ</a></li>
@@ -126,64 +118,62 @@
 
   <!-- Login -->
   <div id="login" class="module" style="display: none;">
-    <div class="container">
-      <body>
-    <div class="cont">
-      <div class="form sign-in">
-        <h2>Welcome back,</h2>
-        <label>
-          <span>Email</span>
-          <input type="email" required/>
-        </label>
-        <label>
-          <span>Password</span>
-          <input type="password" required/>
-        </label>
-      
-        <p class="forgot-pass">Forgot password?</p>
-        <button type="button" class="submit">Log In</button>
-      </div>
-      <div class="sub-cont">
-        <div class="img">
-          <div class="img__text m--up">
-            <h2>New here?</h2>
-            <p>Sign up and discover great amount of new opportunities!</p>
+    <div class="title"></div>
+        <div class="cont">
+          <div class="form sign-in" >
+            <h2>Welcome back,</h2>
+            <label>
+              <span>Email</span>
+              <input type="email" required />
+            </label>
+            <label>
+              <span>Password</span>
+              <input type="password" required />
+            </label>
+
+            <p class="forgot-pass">Forgot password?</p>
+            <button type="button" class="submit">Log In</button>
           </div>
-          <div class="img__text m--in">
-            <h2>One of us?</h2>
-            <p>If you already has an account, just sign in. We've missed you!</p>
-          </div>
-          <div class="img__btn">
-            <span class="m--up">Sign Up</span>
-            <span class="m--in">Log In</span>
+          <div class="sub-cont">
+            <div class="img">
+              <div class="img__text m--up">
+                <h2>New here?</h2>
+                <p>Sign up and discover great amount of new opportunities!</p>
+              </div>
+              <div class="img__text m--in">
+                <h2>One of us?</h2>
+                <p>If you already has an account, just sign in. We've missed you!</p>
+              </div>
+              <div class="img__btn">
+                <span class="m--up">Sign Up</span>
+                <span class="m--in">Log In</span>
+              </div>
+            </div>
+            <form class="form sign-up">
+              <h2>Time to feel like home,</h2>
+              <label>
+                <span>Name</span>
+                <input type="text" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" required />
+              </label>
+              <label>
+                <span>Password</span>
+                <input type="password" id="password" required />
+              </label>
+              <label>
+                <span>Confirm Password</span>
+                <input type="password" id="confirm_password" required />
+              </label>
+              </br>
+              <button type="submit" class="button" id="submit">Sign Up</button>
+
+            </form>
           </div>
         </div>
-        <form class="form sign-up">
-          <h2>Time to feel like home,</h2>
-          <label>
-            <span>Name</span>
-            <input type="text" required/>
-          </label>
-          <label>
-            <span>Email</span>
-            <input type="email" required/>
-          </label>
-          <label>
-            <span>Password</span>
-            <input type="password" id="password" required/>
-          </label>
-          <label>
-            <span>Confirm Password</span>
-            <input type="password" id="confirm_password" required />
-          </label>
-          </br>
-          <button type="submit" class="button" id="submit">Sign Up</button>
-          
-        </form>
-      </div>
-    </div>
-    <script src="./js/login.js"></script>
-      </body>
+
       <!---- <script>
                
         function Login(){ 
@@ -198,99 +188,10 @@
                   if (phonenumber=="phonenumber" && password=="password") { window.location="登入後會出現的網站"; done=1; } 
       if (done==0) { alert("密碼不正確,請再次輸入"); } 
        </script--->
-    </div>
+    
   </div>
 
-  <!-- Signup
-  <div id="signup" class="module" style="display: none;">
-    <div class="container">
-      <div class="title">Sign Up</div>
-      <form action="https://連去後端/" form name="myForm" action="demo_form.php" onsubmit="return validateForm()"
-        method="post">
-        <div class="logo">
-          <img src="./images/login/nespresso-logo.png" alt="Avatar" style="width: 200px">
-        </div>
-
-        <span>
-          Fill the form below (fields with * are required) and create your account.
-        </span>
-        <br />
-        <div class="formbody">
-          <div class="row">
-            <div class="col-sm">
-              <b>State</b>
-            </div>
-            <div class="col-sm">
-              <select name=" 稱呼">
-                <option value="Mr.">Mr.</option>
-                <option value="Miss.">Miss.</option>
-                <option value="Mrs.">Mrs.</option>
-              </select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm">
-              <B> Last name*</B>
-            </div>
-            <div class="col-sm">
-              <input type="text" placeholder="" id="lastname" required="required">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm">
-              <b> First name*</b>
-            </div>
-            <div class="col-sm">
-              <input type="text" name="fname" id="firstname" required="required">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm">
-              <b>E-mail address* </b>
-            </div>
-            <div class="col-sm">
-              <input type="text" name="fname" required="required" width="00px">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm">
-              <b>Phone number*</b>
-            </div>
-            <div class="col-sm">
-              <input type="text" onkeyup="value=value.replace(/[^\d]/g,'')" SIZE="8" maxlength="8" name="fname"
-                required="required">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm"> -->
-              <!---------------password------------------------------
-              <b> New password*</b><br />
-              <p1> Password must:
-                Have at least 8 characters
-                Contain a number
-                Contain a lower case letter</p1>
-            </div>
-            <div class="col-sm">
-              <input type="password" id="password1" mixlength="8" maxlength="12" name="fname" required="required">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm">
-              <b>Comfrom password*</b>
-            </div>
-            <div class="col-sm">
-              <input type="password" id="password1" mixlength="8" maxlength="12" name="fname" required="required">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm">
-              <button id class="submit" value="提交">Submit</button>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>-->
+ 
 
   <!-- Homepage -->
   <div id="homepage" style="display: block;" class="module">
@@ -301,7 +202,7 @@
       </video>
     </div>
     <div class="bgImage" style="display: none;">
-      <img src="./images/homepage/SET_1_Master.jpg">
+      <img src="./images/login/SET_1_Master.jpg">
     </div>
   </div>
 
@@ -405,10 +306,10 @@
         <div class="card card text-center">
           <img class="card-img-top"
             src="https://www.nespresso.com/ecom/medias/sys_master/public/13201481662494/M-1156-2000x2000-FRONT.png"
-            alt="Card image cap" onclick="route('productdetail');">
+            alt="Card image cap" onclick="routedetail(1);">
           <div class="card-block">
             <h5 class="card-title">Pixie</h5>
-            <h5 class="btn btn-dark">$1188</h5>
+            <h5 class="btn btn-dark">$1488</h5>
             <div class="text-left">
               <p class="card-text">Compact size;</p>
               <p class="card-text">Industrial style with hammered metal sides;</p>
@@ -416,7 +317,7 @@
               <p class="card-text">Folding drip tray;</p>
             </div>
 
-            <a href="#" data-name="Pixie" data-price="1188" class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
+            <a href="#" data-name="Pixie" data-price="1488" class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
 
           </div>
         </div>
@@ -424,10 +325,10 @@
         <div class="card card text-center">
           <img class="card-img-top"
             src="https://www.nespresso.com/ecom/medias/sys_master/public/12569812172830/Desktop-Standard-2000x2000.png"
-            alt="Card image cap" onclick="route('productdetail');">
+            alt="Card image cap" onclick="routedetail(2);">
           <div class="card-block">
             <h5 class="card-title">Gran Lattissima</h5>
-            <h5 class="btn btn-dark">$3188</h5>
+            <h5 class="btn btn-dark">$3788</h5>
             <div class="text-left">
               <p class="card-text">Coffee shop recipes at a finger touch;</p>
               <p class="card-text">One-touch milk system;</p>
@@ -435,7 +336,7 @@
               <p class="card-text">3 coffee cup size selections;</p>
             </div>
 
-            <a href="#" data-name="GranLattissima" data-price="3188" class="add-to-cart btn btn-primary btn-dark">Buy
+            <a href="#" data-name="GranLattissima" data-price="3788" class="add-to-cart btn btn-primary btn-dark">Buy
               Now</a>
 
           </div>
@@ -444,10 +345,10 @@
         <div class="card card text-center">
           <img class="card-img-top"
             src="https://www.nespresso.com/ecom/medias/sys_master/public/14443718869022/M-0481-BlackC30-2000x2000.png"
-            alt="Card image cap" onclick="route('productdetail');">
+            alt="Card image cap" onclick="routedetail(3);">
           <div class="card-block">
             <h5 class="card-title">Essenza Mini & Aeroccino3 Black</h5>
-            <h5 class="btn btn-dark">$1488</h5>
+            <h5 class="btn btn-dark">$1588</h5>
             <div class="text-left">
               <p class="card-text">Essenza Mini Coffee Machine;</p>
               <p class="card-text">Aeroccino3 Milk Frother;</p>
@@ -455,7 +356,7 @@
               <p class="card-text">Perfect bundle to start your Nespresso jpurney;</p>
             </div>
 
-            <a href="#" data-name="EssenzaMini&Aeroccino3Black" data-price="1488"
+            <a href="#" data-name="EssenzaMini&Aeroccino3Black" data-price="1588"
               class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
 
           </div>
@@ -464,10 +365,10 @@
         <div class="card card text-center">
           <img class="card-img-top"
             src="https://www.nespresso.com/ecom/medias/sys_master/public/14541544292382/White-Aero3-New-Product-KV-2000x2000px-02.png"
-            alt="Card image cap" onclick="route('productdetail');">
+            alt="Card image cap" onclick="routedetail(4);">
           <div class="card-block">
             <h5 class="card-title">Essenza Mini & Aeroccino3 White</h5>
-            <h5 class="btn btn-dark">$1488</h5>
+            <h5 class="btn btn-dark">$1588</h5>
             <div class="text-left">
               <p class="card-text">Essenza Mini Coffee Machine;</p>
               <p class="card-text">Aeroccino3 Milk Frother;</p>
@@ -475,7 +376,7 @@
               <p class="card-text">Perfect bundle to start your Nespresso jpurney;</p>
             </div>
 
-            <a href="#" data-name="EssenzaMini&Aeroccino3White" data-price="1488"
+            <a href="#" data-name="EssenzaMini&Aeroccino3White" data-price="1588"
               class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
           </div>
         </div>
@@ -486,17 +387,17 @@
         <div class="card card text-center">
           <img class="card-img-top"
             src="https://www.nespresso.com/ecom/medias/sys_master/public/14684050161694/essenza-mini-piano-black-2000x2000.png"
-            alt="Card image cap" onclick="route('productdetail');">
+            alt="Card image cap" onclick="routedetail(5);">
           <div class="card-block">
             <h5 class="card-title">Essenza Mini</h5>
-            <h5 class="btn btn-dark">$988</h5>
+            <h5 class="btn btn-dark">$1088</h5>
             <div class="text-left">
               <p class="card-text">Most compact machine;</p>
               <p class="card-text">2 Cups sizes;</p>
               <p class="card-text">Automatic switch-off after 9 mins;</p>
             </div>
 
-            <a href="#" data-name="EssenzaMini" data-price="988" class="add-to-cart btn btn-primary btn-dark">Buy
+            <a href="#" data-name="EssenzaMini" data-price="1088" class="add-to-cart btn btn-primary btn-dark">Buy
               Now</a>
           </div>
         </div>
@@ -504,7 +405,7 @@
         <div class="card card text-center">
           <img class="card-img-top"
             src="https://www.nespresso.com/ecom/medias/sys_master/public/14215039156254/M-1270-2000x2000.png"
-            alt="Card image cap" onclick="route('productdetail');">
+            alt="Card image cap" onclick="routedetail(6);">
           <div class="card-block">
             <h5 class="card-title">CitiZ Platinum</h5>
             <h5 class="btn btn-dark">$1988</h5>
@@ -521,7 +422,7 @@
         <div class="card card text-center">
           <img class="card-img-top"
             src="https://www.nespresso.com/ecom/medias/sys_master/public/10755477012510/Barista-2000x2000-noreflection.png"
-            alt="Card image cap" onclick="route('productdetail');">
+            alt="Card image cap" onclick="routedetail(7);">
           <div class="card-block">
             <h5 class="card-title">Barista</h5>
             <h5 class="btn btn-dark">$1988</h5>
@@ -538,7 +439,7 @@
         <div class="card card text-center">
           <img class="card-img-top"
             src="https://www.nespresso.com/ecom/medias/sys_master/public/14215058489374/M-1274-2000x2000.png"
-            alt="Card image cap" onclick="route('productdetail');">
+            alt="Card image cap" onclick="routedetail(8);">
           <div class="card-block">
             <h5 class="card-title">CitiZ Platinum & Milk</h5>
             <h5 class="btn btn-dark">$2488</h5>
@@ -611,7 +512,7 @@
       <div id="card" class="card-deck">
         <div class="card card text-center">
           <img class="card-img-top" src="./images/coffee/Napoli-PLP.webp" alt="Card image cap"
-            onclick="route('productdetail');">
+            onclick="routedetail(9);">
           <div class="card-block">
             <h5 class="card-title">NAPOLI</h5>
             <h5 class="btn btn-dark">$47</h5>
@@ -629,8 +530,7 @@
         </div>
 
         <div class="card card text-center">
-          <img class="card-img-top" src="./images/coffee/paris.webp" alt="Card image cap"
-            onclick="route('productdetail');">
+          <img class="card-img-top" src="./images/coffee/paris.webp" alt="Card image cap" onclick="routedetail(10);">
           <div class="card-block">
             <h5 class="card-title">PARIS ESPRESSO</h5>
             <h5 class="btn btn-dark">$47</h5>
@@ -647,8 +547,7 @@
         </div>
 
         <div class="card card text-center">
-          <img class="card-img-top" src="./images/coffee/MILANO.webp" alt="Card image cap"
-            onclick="route('productdetail');">
+          <img class="card-img-top" src="./images/coffee/MILANO.webp" alt="Card image cap" onclick="routedetail(11);">
           <div class="card-block">
             <h5 class="card-title">MILANO INTENSO LIMITED EDITION</h5>
             <h5 class="btn btn-dark">$47</h5>
@@ -659,15 +558,14 @@
               <p class="card-text"> A hint fruit and spices make this a deliciously complex blend.;</p>
             </div>
 
-            <a href="#" data-name="MilanoIntensoLimiedEdition" data-price="47"
+            <a href="#" data-name="MilanoIntensoLimiedEdition" data-price="70"
               class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
 
           </div>
         </div>
 
         <div class="card card text-center">
-          <img class="card-img-top" src="./images/coffee/istanbul.webp" alt="Card image cap"
-            onclick="route('productdetail');">
+          <img class="card-img-top" src="./images/coffee/istanbul.webp" alt="Card image cap" onclick="routedetail(12);">
           <div class="card-block">
             <h5 class="card-title">ISTANBUL ESPRESSO</h5>
             <h5 class="btn btn-dark">$47</h5>
@@ -688,7 +586,7 @@
 
         <div class="card card text-center">
           <img class="card-img-top" src="./images/coffee/Caramel-Cr-me-Brulee.webp" alt="Card image cap"
-            onclick="route('productdetail');">
+            onclick="routedetail(13);">
           <div class="card-block">
             <h5 class="card-title">CARAMEL CRÈME BRULEE</h5>
             <h5 class="btn btn-dark">$52</h5>
@@ -706,7 +604,7 @@
 
         <div class="card card text-center">
           <img class="card-img-top" src="./images/coffee/INFINIMENT.webp" alt="Card image cap"
-            onclick="route('productdetail');">
+            onclick="routedetail(14);">
           <div class="card-block">
             <h5 class="card-title">INFINIMENT ESPRESSO</h5>
             <h5 class="btn btn-dark">$47</h5>
@@ -716,14 +614,13 @@
                 Arabica from Tolima,;</p>
               <p class="card-text">Colombia.;</p>
             </div>
-            <a href="#" data-name="InfinimentEspresso" data-price="47" class="add-to-cart btn btn-primary btn-dark">Buy
+            <a href="#" data-name="InfinimentEspresso" data-price="70" class="add-to-cart btn btn-primary btn-dark">Buy
               Now</a>
           </div>
         </div>
 
         <div class="card card text-center">
-          <img class="card-img-top" src="./images/coffee/BUENOS.webp" alt="Card image cap"
-            onclick="route('productdetail');">
+          <img class="card-img-top" src="./images/coffee/BUENOS.webp" alt="Card image cap" onclick="routedetail(15);">
           <div class="card-block">
             <h5 class="card-title">BUENOS AIRES LUNGO</h5>
             <h5 class="btn btn-dark">$47</h5>
@@ -740,8 +637,7 @@
         </div>
 
         <div class="card card text-center">
-          <img class="card-img-top" src="./images/coffee/TOKYO.webp" alt="Card image cap"
-            onclick="route('productdetail');">
+          <img class="card-img-top" src="./images/coffee/TOKYO.webp" alt="Card image cap" onclick="routedetail(16);">
           <div class="card-block">
             <h5 class="card-title">TOKYO LUNGO</h5>
             <h5 class="btn btn-dark">$47</h5>
@@ -759,7 +655,8 @@
     </div>
   </div>
 
-  <!-- Recepies -->
+  <!-- Recpies-->
+  
 
   <!-- Reservation -->
   <div id="reservation" class="module" style="display: none;">
@@ -1045,9 +942,9 @@
         <div class="card__body">
           <div class="half">
             <div class="featured_text">
-              <h1>Pixie</h1>
-              <p class="sub">Pixie Electric Red Coffee Machine</p>
-              <p class="price">$1188.00</p>
+              <h1 id="productdetailname">[Product Name]</h1>
+              <p class="sub" id="productdetailtitle">[Product Title]</p>
+              <p id="pd_price" class="price">$1188.00</p>
             </div>
 
             <div id="slider-wrapper">
@@ -1060,35 +957,26 @@
                 <label for="Slide3" id="s3"></label>
                 <input type="radio" name="slide" class="control" id="Slide4" />
                 <label for="Slide4" id="s4"></label>
-                <div class="overflow-wrapper">
-                  <a class="slide" href=""><img src="./images/machines/Pixie.jpg" /></a>
-                  <a class="slide" href=""><img src="./images/machines/Pixie_face.jpg" /></a>
-                  <a class="slide" href=""><img src="./images/machines/Pixie_side.jpg" /></a>
-                  <a class="slide" href=""><img src="./images/machines/Pixie_top.jpg" /></a>
+                <div class="overflow-wrapper" id="pd_pic">
                 </div>
               </div>
             </div>
           </div>
           <div class="half">
             <div class="description">
-
-              <p>
-                Straight from the design studio, the Nespresso Pixie machine will
-                please those who like an industrial style with its hammered metal
-                sides. And thanks to its high-pressure pump and fast heat-up
-                system, it provides Nespresso quality coffee in a simple and
-                hasslefree way. Because good things are made to last.
+              <p id="pd_header">
+                [Product Header]
               </p>
               </br></br>
               <p>
-                <strong><b> KEY FEATURES</b></strong>
+                <strong><b>KEY FEATURES</b></strong>
               </p>
-              <p>Auto off</p>
+              <div id="pd_kf">[Product key features]</div>
+              <!-- <p>Auto off</p>
               <p>Pixie is fast</p>
               <p>Coffee size Espresso & Lungo</p>
               <p>Fast heat</p>
-              <p>Pixle is ergonomic</p>
-
+              <p>Pixle is ergonomic</p> -->
               </br>
               <p>
                 <strong><b> Available colors:</b></strong>
@@ -1128,34 +1016,13 @@
         <button class="btn tablink" onclick="openCity(event,'reviews')">REVIEWS</button>
       </div>
       <div id="specifications" class="card2 city">
-        <h5><strong>Functionality in a compact design</strong> </h5>
-        <p>Industrial looks for a crafted coffee experience.The Nespresso Pixie coffee machine packs a wide range of
-          innovative,advanced
-          features into a surprisingly small enclosure.Straight from the design studio,the Nespresso Pixie machine will
-          please those who like an
-          Industrial style with its hammered metal sides.And thanks to its high-pressure pump and fast heat-up system,it
-          provides Nespresso
-          quality coffee in a simple and hasslefree way.Because good things are made to last.
-        </p>
+        <h5><strong><div id="pd_desc_header">[Description Header]</div></strong></h5>
+        <p><div id="pd_desc_body">[Description Body]</div></p>
         <br>
         <div class="card2">
           <div class="description">
             <h4><strong>Specifications</strong></h4><br />
-            <p>Weight:2.8kg</p>
-            <p>Height:23.5cm</p>
-            <p>Removable water tank:0.7L</p>
-            <p>Used capsule container capacity:10</p>
-            <p>Power rating(in watts):1260W</p>
-            <p>Dimensions(WxDxH):11.1x23.5x32.6cm</p>
-            <p>Cable Length:80cm</p>
-            <p>Folding drip tray for Latte Maccgiato glass</p>
-            <p>Warranty:2 years</p>
-            <p>Pressure:19 Bars</p>
-            <p>Optimised heat up time</p>
-            <p>Automatic shut off after 9mn,programmable</p>
-            <p>Cable storage</p>
-            <p>Automatic power off after 9 mins</p>
-            <p>Fast heat-up</p>
+            <div id="pd_specs"></div>
           </div>
         </div>
       </div>
@@ -1320,37 +1187,37 @@
     </div>
   </div>
 
-  <!-- chatbox -->
-  <div id="chatbox" class="module">
-  <div class="chatbox-wrapper">
-		<div class="chatbox-toggle">
-		<i class="fa-solid fa-headset"></i>
-		</div>
-		<div class="chatbox-message-wrapper">
-			<div class="chatbox-message-header">
-				<div class="chatbox-message-profile">
-					<img src="./images/login/nespresso-logo.png" alt="" class="chatbox-message-image">
-					<div>
-						<h4 class="chatbox-message-name">Customer Service 001</h4>
-						<p class="chatbox-message-status">Online</p>
-					</div>
-				</div>
-				<div class="chatbox-message-dropdown">
-					<i class='chatbox-message-dropdown-toggle'></i>					
-				</div>
-			</div>
-			<div class="chatbox-message-content">
-				<h4 class="chatbox-message-no-message">Thanks for getting in touch.<br>How can I help you today?<i class="fas fa-mug-hot"></i></h4>
-			</div>
-			<div class="chatbox-message-bottom">
-				<form action="#" class="chatbox-message-form">
-					<textarea rows="1" placeholder="Type message..." class="chatbox-message-input"></textarea>
-					<button type="submit" class="chatbox-message-submit"><i class="bx bx-send"></i></button>
-				</form>
-			</div>
-		</div>
-	</div>
-  <script type="text/javascript" src="./js/chatbox.js"></script>
+  <!-- chatbot -->
+  <div id="chatbot">
+    <div class="chatbot-wrapper">
+      <div class="chatbot-toggle">
+        <i class="fa-solid fa-headset"></i>
+      </div>
+      <div class="chatbot-message-wrapper">
+        <div class="chatbot-message-header">
+          <div class="chatbot-message-profile">
+            <img src="./images/login/nespresso-logo.png" alt="" class="chatbot-message-image">
+            <div>
+              <h4 class="chatbot-message-name">Customer Service 001</h4>
+              <p class="chatbot-message-status">Online</p>
+            </div>
+          </div>
+          <div class="chatbot-message-dropdown">
+            <i class='chatbot-message-dropdown-toggle'></i>
+          </div>
+        </div>
+        <div class="chatbot-message-content">
+          <h4 class="chatbot-message-no-message">Thanks for getting in touch.<br>How can I help you today?<i
+              class="fas fa-mug-hot"></i></h4>
+        </div>
+        <div class="chatbot-message-bottom">
+          <form action="#" class="chatbot-message-form">
+            <textarea rows="1" placeholder="Type message..." class="chatbot-message-input"></textarea>
+            <button type="submit" class="chatbot-message-submit"><i class="bx bx-send"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- footer -->
