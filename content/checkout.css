@@ -31,8 +31,8 @@
     text-transform: uppercase;
     font-weight: 300;
     text-align: left;
-    color: #506982;
-    border-bottom: 1px solid #506982;
+    color: #392606;
+    border-bottom: 1px solid #392606;
     padding-bottom: 3px;
     margin-bottom: 20px;
 }
@@ -56,7 +56,7 @@
     border-color: #9FB1C1;
 }
 #checkout .controls input[type="text"]:focus + label, .controls input[type="text"]:hover + label, .controls input[type="email"]:focus + label, .controls input[type="email"]:hover + label, .controls input[type="number"]:focus + label, .controls input[type="number"]:hover + label, .controls input[type="date"]:focus + label, .controls input[type="date"]:hover + label, .controls input[type="tel"]:focus + label, .controls input[type="tel"]:hover + label, .controls input[type="time"]:focus + label, .controls input[type="time"]:hover + label, .controls textarea:focus + label, .controls textarea:hover + label, .controls button:focus + label, .controls button:hover + label, .controls select:focus + label, .controls select:hover + label {
-    color: #bdcc00;
+    color: #392606;
     cursor: text;
 }
 #checkout .controls .fa-sort {
@@ -98,11 +98,11 @@
     outline-color: #444;
     background-color: transparent;
     color: #444;
-    padding: 12px 0;
+    padding: 7px 5px;
     float: right;
 }
 #checkout  button:hover {
-    background-color: #224c60;
+    background-color: #392606;
     color: white
 }
 #checkout  .clear:after {
@@ -119,7 +119,7 @@
     display: table;
     clear: both;
 }
- [class*='col-'] {
+#checkout [class*='col-'] {
     float: left;
     padding-right: 10px;
 }
@@ -139,14 +139,14 @@
     width: 25%;
 }
  @media (max-width: 760px) {
-    .col-1-4-sm, .col-1-3, .col-2-3 {
+    #checkout .col-1-4-sm,#checkout  .col-1-3,#checkout  .col-2-3 {
        width: 100%;
    }
-    [class*='col-'] {
+   #checkout  [class*='col-'] {
        padding-right: 0px;
    }
 }
- .col-1-8 {
+#checkout .col-1-8 {
     width: 12.5%;
 }
 

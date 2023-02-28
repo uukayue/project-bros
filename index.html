@@ -17,18 +17,18 @@
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/5d71566990.js" crossorigin="anonymous"></script>
-  <script
-    src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+  <!-- <script
+    src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script> -->
   <script type="text/javascript" src="./data.json"></script>
-
 
   <!-- Customize -->
   <script type="text/javascript" src="./js/index.js"></script>
   <script type="text/javascript" src="./js/shoppingCart.js"></script>
-  <script type="text/javascript" src="./js/signup.js"></script>
+  <!-- <script type="text/javascript" src="./js/signup.js"></script>
   <script type="text/javascript" src="./js/productdetail.js"></script>
   <script type="text/javascript" src="./js/Payment.js"></script>
   <script type="text/javascript" src="./js/chatbot.js"></script>
+  <script type="text/javascript" src="./js/recpies.js"></script> -->
 
   <link rel="stylesheet" href="./content/checkout.css" />
   <link rel="stylesheet" href="./content/main.css" />
@@ -119,79 +119,61 @@
   <!-- Login -->
   <div id="login" class="module" style="display: none;">
     <div class="title"></div>
-        <div class="cont">
-          <div class="form sign-in" >
-            <h2>Welcome back,</h2>
-            <label>
-              <span>Email</span>
-              <input type="email" required />
-            </label>
-            <label>
-              <span>Password</span>
-              <input type="password" required />
-            </label>
+    <div class="cont">
+      <div class="form sign-in">
+        <h2>Welcome back,</h2>
+        <label>
+          <span>Email</span>
+          <input type="email" required />
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" required />
+        </label>
 
-            <p class="forgot-pass">Forgot password?</p>
-            <button type="button" class="submit">Log In</button>
+        <p class="forgot-pass">Forgot password?</p>
+        <button type="button" class="submit">Log In</button>
+      </div>
+      <div class="sub-cont">
+        <div class="img">
+          <div class="img__text m--up">
+            <h2>New here?</h2>
+            <p>Sign up and discover great amount of new opportunities!</p>
           </div>
-          <div class="sub-cont">
-            <div class="img">
-              <div class="img__text m--up">
-                <h2>New here?</h2>
-                <p>Sign up and discover great amount of new opportunities!</p>
-              </div>
-              <div class="img__text m--in">
-                <h2>One of us?</h2>
-                <p>If you already has an account, just sign in. We've missed you!</p>
-              </div>
-              <div class="img__btn">
-                <span class="m--up">Sign Up</span>
-                <span class="m--in">Log In</span>
-              </div>
-            </div>
-            <form class="form sign-up">
-              <h2>Time to feel like home,</h2>
-              <label>
-                <span>Name</span>
-                <input type="text" required />
-              </label>
-              <label>
-                <span>Email</span>
-                <input type="email" required />
-              </label>
-              <label>
-                <span>Password</span>
-                <input type="password" id="password" required />
-              </label>
-              <label>
-                <span>Confirm Password</span>
-                <input type="password" id="confirm_password" required />
-              </label>
-              </br>
-              <button type="submit" class="button" id="submit">Sign Up</button>
-
-            </form>
+          <div class="img__text m--in">
+            <h2>One of us?</h2>
+            <p>If you already has an account, just sign in. We've missed you!</p>
+          </div>
+          <div class="img__btn">
+            <span class="m--up">Sign Up</span>
+            <span class="m--in">Log In</span>
           </div>
         </div>
+        <form class="form sign-up">
+          <h2>Time to feel like home,</h2>
+          <label>
+            <span>Name</span>
+            <input type="text" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" required />
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" id="password" required />
+          </label>
+          <label>
+            <span>Confirm Password</span>
+            <input type="password" id="confirm_password" required />
+          </label>
+          </br>
+          <button type="submit" class="button" id="submit">Sign Up</button>
 
-      <!---- <script>
-               
-        function Login(){ 
-          var done=0; 
-          var phonenumber=document.login.phonenumber.value; 
-          (phonenumber=phonenumber); 
-          var password=document.login.password.value; 
-          password=password.toLowerCase(); 
-          if (username=="帳號" && password=="密碼") { window.location="登入後會出現的網站"; done=1; } 
-          if (done==0) { alert("帳號或密碼錯誤時出現的訊息"); } 
-          } 
-                  if (phonenumber=="phonenumber" && password=="password") { window.location="登入後會出現的網站"; done=1; } 
-      if (done==0) { alert("密碼不正確,請再次輸入"); } 
-       </script--->
-    
+        </form>
+      </div>
+    </div>
   </div>
-
- 
 
   <!-- Homepage -->
   <div id="homepage" style="display: block;" class="module">
@@ -306,7 +288,7 @@
         <div class="card card text-center">
           <img class="card-img-top"
             src="https://www.nespresso.com/ecom/medias/sys_master/public/13201481662494/M-1156-2000x2000-FRONT.png"
-            alt="Card image cap" onclick="routedetail(1);">
+            alt="Card image cap" onclick="routedetail('machines', 1);">
           <div class="card-block">
             <h5 class="card-title">Pixie</h5>
             <h5 class="btn btn-dark">$1488</h5>
@@ -317,7 +299,7 @@
               <p class="card-text">Folding drip tray;</p>
             </div>
 
-            <a href="#" data-name="Pixie" data-price="1488" class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
+            <a href="#" data-name="Pixie" data-price="1488" class="add-to-cart btn btn-dark">Buy Now</a>
 
           </div>
         </div>
@@ -325,7 +307,7 @@
         <div class="card card text-center">
           <img class="card-img-top"
             src="https://www.nespresso.com/ecom/medias/sys_master/public/12569812172830/Desktop-Standard-2000x2000.png"
-            alt="Card image cap" onclick="routedetail(2);">
+            alt="Card image cap" onclick="routedetail('machines', 2);">
           <div class="card-block">
             <h5 class="card-title">Gran Lattissima</h5>
             <h5 class="btn btn-dark">$3788</h5>
@@ -336,7 +318,7 @@
               <p class="card-text">3 coffee cup size selections;</p>
             </div>
 
-            <a href="#" data-name="GranLattissima" data-price="3788" class="add-to-cart btn btn-primary btn-dark">Buy
+            <a href="#" data-name="GranLattissima" data-price="3788" class="add-to-cart btn btn-dark">Buy
               Now</a>
 
           </div>
@@ -345,7 +327,7 @@
         <div class="card card text-center">
           <img class="card-img-top"
             src="https://www.nespresso.com/ecom/medias/sys_master/public/14443718869022/M-0481-BlackC30-2000x2000.png"
-            alt="Card image cap" onclick="routedetail(3);">
+            alt="Card image cap" onclick="routedetail('machines', 3);">
           <div class="card-block">
             <h5 class="card-title">Essenza Mini & Aeroccino3 Black</h5>
             <h5 class="btn btn-dark">$1588</h5>
@@ -356,8 +338,8 @@
               <p class="card-text">Perfect bundle to start your Nespresso jpurney;</p>
             </div>
 
-            <a href="#" data-name="EssenzaMini&Aeroccino3Black" data-price="1588"
-              class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
+            <a href="#" data-name="EssenzaMini&Aeroccino3Black" data-price="1588" class="add-to-cart btn btn-dark">Buy
+              Now</a>
 
           </div>
         </div>
@@ -365,7 +347,7 @@
         <div class="card card text-center">
           <img class="card-img-top"
             src="https://www.nespresso.com/ecom/medias/sys_master/public/14541544292382/White-Aero3-New-Product-KV-2000x2000px-02.png"
-            alt="Card image cap" onclick="routedetail(4);">
+            alt="Card image cap" onclick="routedetail('machines', 4);">
           <div class="card-block">
             <h5 class="card-title">Essenza Mini & Aeroccino3 White</h5>
             <h5 class="btn btn-dark">$1588</h5>
@@ -376,8 +358,8 @@
               <p class="card-text">Perfect bundle to start your Nespresso jpurney;</p>
             </div>
 
-            <a href="#" data-name="EssenzaMini&Aeroccino3White" data-price="1588"
-              class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
+            <a href="#" data-name="EssenzaMini&Aeroccino3White" data-price="1588" class="add-to-cart btn btn-dark">Buy
+              Now</a>
           </div>
         </div>
       </div>
@@ -387,7 +369,7 @@
         <div class="card card text-center">
           <img class="card-img-top"
             src="https://www.nespresso.com/ecom/medias/sys_master/public/14684050161694/essenza-mini-piano-black-2000x2000.png"
-            alt="Card image cap" onclick="routedetail(5);">
+            alt="Card image cap" onclick="routedetail('machines', 5);">
           <div class="card-block">
             <h5 class="card-title">Essenza Mini</h5>
             <h5 class="btn btn-dark">$1088</h5>
@@ -397,7 +379,7 @@
               <p class="card-text">Automatic switch-off after 9 mins;</p>
             </div>
 
-            <a href="#" data-name="EssenzaMini" data-price="1088" class="add-to-cart btn btn-primary btn-dark">Buy
+            <a href="#" data-name="EssenzaMini" data-price="1088" class="add-to-cart btn btn-dark">Buy
               Now</a>
           </div>
         </div>
@@ -405,7 +387,7 @@
         <div class="card card text-center">
           <img class="card-img-top"
             src="https://www.nespresso.com/ecom/medias/sys_master/public/14215039156254/M-1270-2000x2000.png"
-            alt="Card image cap" onclick="routedetail(6);">
+            alt="Card image cap" onclick="routedetail('machines', 6);">
           <div class="card-block">
             <h5 class="card-title">CitiZ Platinum</h5>
             <h5 class="btn btn-dark">$1988</h5>
@@ -414,7 +396,7 @@
               <p class="card-text">Americano and hot water options;</p>
               <p class="card-text">Descaling alert;</p>
             </div>
-            <a href="#" data-name="CitiZPlatinum" data-price="1988" class="add-to-cart btn btn-primary btn-dark">Buy
+            <a href="#" data-name="CitiZPlatinum" data-price="1988" class="add-to-cart btn btn-dark">Buy
               Now</a>
           </div>
         </div>
@@ -422,7 +404,7 @@
         <div class="card card text-center">
           <img class="card-img-top"
             src="https://www.nespresso.com/ecom/medias/sys_master/public/10755477012510/Barista-2000x2000-noreflection.png"
-            alt="Card image cap" onclick="routedetail(7);">
+            alt="Card image cap" onclick="routedetail('machines', 7);">
           <div class="card-block">
             <h5 class="card-title">Barista</h5>
             <h5 class="btn btn-dark">$1988</h5>
@@ -432,14 +414,14 @@
               <p class="card-text">Touch Interface;</p>
               <p class="card-text">20 Recipes available;</p>
             </div>
-            <a href="#" data-name="Barista" data-price="1988" class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
+            <a href="#" data-name="Barista" data-price="1988" class="add-to-cart btn btn-dark">Buy Now</a>
           </div>
         </div>
 
         <div class="card card text-center">
           <img class="card-img-top"
             src="https://www.nespresso.com/ecom/medias/sys_master/public/14215058489374/M-1274-2000x2000.png"
-            alt="Card image cap" onclick="routedetail(8);">
+            alt="Card image cap" onclick="routedetail('machines', 8);">
           <div class="card-block">
             <h5 class="card-title">CitiZ Platinum & Milk</h5>
             <h5 class="btn btn-dark">$2488</h5>
@@ -449,8 +431,7 @@
               <p class="card-text">Americano and hot water options;</p>
               <p class="card-text">Milk recipes thanks to the integrated Aeroccino3;</p>
             </div>
-            <a href="#" data-name="CitiZPlatinum&Milk" data-price="2488"
-              class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
+            <a href="#" data-name="CitiZPlatinum&Milk" data-price="2488" class="add-to-cart btn btn-dark">Buy Now</a>
           </div>
         </div>
       </div>
@@ -512,7 +493,7 @@
       <div id="card" class="card-deck">
         <div class="card card text-center">
           <img class="card-img-top" src="./images/coffee/Napoli-PLP.webp" alt="Card image cap"
-            onclick="routedetail(9);">
+            onclick="routedetail('coffee', 9);">
           <div class="card-block">
             <h5 class="card-title">NAPOLI</h5>
             <h5 class="btn btn-dark">$47</h5>
@@ -524,13 +505,14 @@
               <p class="card-text">So, its depth of character should come as no surprise.;</p>
             </div>
 
-            <a href="#" data-name="Napoli" data-price="47" class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
+            <a href="#" data-name="Napoli" data-price="47" class="add-to-cart btn btn-dark">Buy Now</a>
 
           </div>
         </div>
 
         <div class="card card text-center">
-          <img class="card-img-top" src="./images/coffee/paris.webp" alt="Card image cap" onclick="routedetail(10);">
+          <img class="card-img-top" src="./images/coffee/paris.webp" alt="Card image cap"
+            onclick="routedetail('coffee', 10);">
           <div class="card-block">
             <h5 class="card-title">PARIS ESPRESSO</h5>
             <h5 class="btn btn-dark">$47</h5>
@@ -540,14 +522,15 @@
               <p class="card-text">pleasant and a hint of citrus.;</p>
             </div>
 
-            <a href="#" data-name="ParisEspresso" data-price="47" class="add-to-cart btn btn-primary btn-dark">Buy
+            <a href="#" data-name="ParisEspresso" data-price="47" class="add-to-cart btn btn-dark">Buy
               Now</a>
 
           </div>
         </div>
 
         <div class="card card text-center">
-          <img class="card-img-top" src="./images/coffee/MILANO.webp" alt="Card image cap" onclick="routedetail(11);">
+          <img class="card-img-top" src="./images/coffee/MILANO.webp" alt="Card image cap"
+            onclick="routedetail('coffee', 11);">
           <div class="card-block">
             <h5 class="card-title">MILANO INTENSO LIMITED EDITION</h5>
             <h5 class="btn btn-dark">$47</h5>
@@ -558,14 +541,15 @@
               <p class="card-text"> A hint fruit and spices make this a deliciously complex blend.;</p>
             </div>
 
-            <a href="#" data-name="MilanoIntensoLimiedEdition" data-price="70"
-              class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
+            <a href="#" data-name="MilanoIntensoLimiedEdition" data-price="70" class="add-to-cart btn btn-dark">Buy
+              Now</a>
 
           </div>
         </div>
 
         <div class="card card text-center">
-          <img class="card-img-top" src="./images/coffee/istanbul.webp" alt="Card image cap" onclick="routedetail(12);">
+          <img class="card-img-top" src="./images/coffee/istanbul.webp" alt="Card image cap"
+            onclick="routedetail('coffee', 12);">
           <div class="card-block">
             <h5 class="card-title">ISTANBUL ESPRESSO</h5>
             <h5 class="btn btn-dark">$47</h5>
@@ -576,7 +560,7 @@
               <p class="card-text">with a touch of acidity and an almond finish that hints at sweetnss;</p>
             </div>
 
-            <a href="#" data-name="IstanbulEspresso" data-price="47" class="add-to-cart btn btn-primary btn-dark">Buy
+            <a href="#" data-name="IstanbulEspresso" data-price="47" class="add-to-cart btn btn-dark">Buy
               Now</a>
           </div>
         </div>
@@ -586,7 +570,7 @@
 
         <div class="card card text-center">
           <img class="card-img-top" src="./images/coffee/Caramel-Cr-me-Brulee.webp" alt="Card image cap"
-            onclick="routedetail(13);">
+            onclick="routedetail('coffee', 13);">
           <div class="card-block">
             <h5 class="card-title">CARAMEL CRÈME BRULEE</h5>
             <h5 class="btn btn-dark">$52</h5>
@@ -597,14 +581,14 @@
                 Crème Brûlée.;</p>
             </div>
 
-            <a href="#" data-name="CarmelCremeBrulee" data-price="52" class="add-to-cart btn btn-primary btn-dark">Buy
+            <a href="#" data-name="CarmelCremeBrulee" data-price="52" class="add-to-cart btn btn-dark">Buy
               Now</a>
           </div>
         </div>
 
         <div class="card card text-center">
           <img class="card-img-top" src="./images/coffee/INFINIMENT.webp" alt="Card image cap"
-            onclick="routedetail(14);">
+            onclick="routedetail('coffee', 14);">
           <div class="card-block">
             <h5 class="card-title">INFINIMENT ESPRESSO</h5>
             <h5 class="btn btn-dark">$47</h5>
@@ -614,13 +598,14 @@
                 Arabica from Tolima,;</p>
               <p class="card-text">Colombia.;</p>
             </div>
-            <a href="#" data-name="InfinimentEspresso" data-price="70" class="add-to-cart btn btn-primary btn-dark">Buy
+            <a href="#" data-name="InfinimentEspresso" data-price="70" class="add-to-cart btn btn-dark">Buy
               Now</a>
           </div>
         </div>
 
         <div class="card card text-center">
-          <img class="card-img-top" src="./images/coffee/BUENOS.webp" alt="Card image cap" onclick="routedetail(15);">
+          <img class="card-img-top" src="./images/coffee/BUENOS.webp" alt="Card image cap"
+            onclick="routedetail('coffee', 15);">
           <div class="card-block">
             <h5 class="card-title">BUENOS AIRES LUNGO</h5>
             <h5 class="btn btn-dark">$47</h5>
@@ -631,13 +616,14 @@
               <p class="card-text">A destination for true foodies, Buenos Aires is a highlight of Argentina’s vibrant
                 food scene.;</p>
             </div>
-            <a href="#" data-name="BuenosAiresLungo" data-price="47" class="add-to-cart btn btn-primary btn-dark">Buy
+            <a href="#" data-name="BuenosAiresLungo" data-price="47" class="add-to-cart btn btn-dark">Buy
               Now</a>
           </div>
         </div>
 
         <div class="card card text-center">
-          <img class="card-img-top" src="./images/coffee/TOKYO.webp" alt="Card image cap" onclick="routedetail(16);">
+          <img class="card-img-top" src="./images/coffee/TOKYO.webp" alt="Card image cap"
+            onclick="routedetail('coffee', 16);">
           <div class="card-block">
             <h5 class="card-title">TOKYO LUNGO</h5>
             <h5 class="btn btn-dark">$47</h5>
@@ -648,7 +634,7 @@
               <p class="card-text">Known for tea, the Japanese also have a real affinity for coffee.;</p>
 
             </div>
-            <a href="#" data-name="TokyoLungo" data-price="47" class="add-to-cart btn btn-primary btn-dark">Buy Now</a>
+            <a href="#" data-name="TokyoLungo" data-price="47" class="add-to-cart btn btn-dark">Buy Now</a>
           </div>
         </div>
       </div>
@@ -656,7 +642,54 @@
   </div>
 
   <!-- Recpies-->
-  
+  <div id="recipes" style="display: none;" class="module">
+    <div class="title">Recipes</div>
+    <div class="container">
+      <div id="video_player">
+        <video controls poster="" class="video" id="video">
+          <source src="./images/recipes/Mexican-Fiesta-.png" type="video/mp4">
+          <source src="./images/recipes/Mexican-Fiesta-Vertuo.mp4" type="video/mp4">
+        </video>
+        <div class="scrollBox">
+          <div class="box">
+            <img src="./images/recipes/Mexican-Fiesta-.png">
+            <div class="box-content">
+              <h3>Mexican Fiesta Vertuo</h3>
+              <div href="./images/recipes/Mexican-Fiesta-Vertuo.mp4" class="btnRecipes">Watch</div>
+            </div>
+          </div>
+          <div class="box">
+            <img src="./images/recipes/Almond Reverso.png">
+            <div class="box-content">
+              <h3>Almond Reverso</h3>
+              <div href="./images/recipes/Almond-Reverso.mp4" class="btnRecipes">Watch</div>
+            </div>
+          </div>
+          <div class="box">
+            <img src="./images/recipes/Pumpkin-Spice-Latte-Coffee.png">
+            <div class="box-content">
+              <h3>Pumpkin Spice Latte</h3>
+              <div href="./images/recipes/Pumpkin-Spice-Latte-Coffee.mp4" class="btnRecipes">Watch</div>
+            </div>
+          </div>
+          <div class="box">
+            <img src="./images/recipes/Chestnut-Coco-Latte.png">
+            <div class="box-content">
+              <h3>Chestnut Coco Latte</h3>
+              <div href="./images/recipes/Chestnut-Coco-Latte.mp4" class="btnRecipes">Watch</div>
+            </div>
+          </div>
+          <div class="box">
+            <img src="./images/recipes/Cinnamon-Flat-White.png">
+            <div class="box-content">
+              <h3>Cinnamon Flat White</h3>
+              <div href="./images/recipes/Chestnut-Coco-Latte.mp4" class="btnRecipes">Watch</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Reservation -->
   <div id="reservation" class="module" style="display: none;">
@@ -933,7 +966,7 @@
     <div class="container">
       <div class="title"></div>
       <div class="card">
-        <div class="card__title" onclick="route('machines')">
+        <div class="card__title" id="backButton" onclick="route('machines')">
           <div class="icon">
             <a href="#"><i class="fa fa-arrow-left"></i></a>
           </div>
@@ -944,9 +977,8 @@
             <div class="featured_text">
               <h1 id="productdetailname">[Product Name]</h1>
               <p class="sub" id="productdetailtitle">[Product Title]</p>
-              <p id="pd_price" class="price">$1188.00</p>
+              <p id="pd_price" class="price">[Product Price]</p>
             </div>
-
             <div id="slider-wrapper">
               <div class="inner-wrapper">
                 <input checked type="radio" name="slide" class="control" id="Slide1" />
@@ -972,11 +1004,6 @@
                 <strong><b>KEY FEATURES</b></strong>
               </p>
               <div id="pd_kf">[Product key features]</div>
-              <!-- <p>Auto off</p>
-              <p>Pixie is fast</p>
-              <p>Coffee size Espresso & Lungo</p>
-              <p>Fast heat</p>
-              <p>Pixle is ergonomic</p> -->
               </br>
               <p>
                 <strong><b> Available colors:</b></strong>
@@ -1006,7 +1033,8 @@
             <h3>Andrew Palmer</h3>
           </div>
           <div class="action">
-            <button type="button" data-name="Pixie" data-price="1188" class="add-to-cart">Add to cart</button>
+            <button type="button" data-name="Pixie" data-price="1188" class="add-to-cart" onclick="addtoCart()">Add to
+              cart</button>
           </div>
         </div>
       </div>
@@ -1016,8 +1044,12 @@
         <button class="btn tablink" onclick="openCity(event,'reviews')">REVIEWS</button>
       </div>
       <div id="specifications" class="card2 city">
-        <h5><strong><div id="pd_desc_header">[Description Header]</div></strong></h5>
-        <p><div id="pd_desc_body">[Description Body]</div></p>
+        <h5><strong>
+            <div id="pd_desc_header">[Description Header]</div>
+          </strong></h5>
+        <p>
+        <div id="pd_desc_body">[Description Body]</div>
+        </p>
         <br>
         <div class="card2">
           <div class="description">
@@ -1163,24 +1195,18 @@
             </div>
 
             <div class="input_box">
-              <button class="btn" onclick="openPopup();">Pay Now</button>
-
+              <button class="btn"
+                onclick="$('#popup').addClass('open-popup'); window.scrollTo({ top: 0, behavior: 'smooth' });return false;">
+                Pay Now
+              </button>
             </div>
 
             <div class="popup" id="popup">
               <h2>Thank You!</h2>
               <p>Your details has been successfully submitted. Thanks!</p>
-              <button type="button" onclick="route('homepage'); closePopup();">OK</button>
+              <button type="button"
+                onclick="$('#popup').removeClass('open-popup');route('homepage'); return false;">OK</button>
             </div>
-            <script>
-              let popup = document.getElementById("popup");
-              function openPopup() {
-                popup.classList.add("open-popup");
-              }
-              function closePopup() {
-                popup.classList.remove("open-popup");
-              }
-            </script>
           </div>
         </div>
       </form>

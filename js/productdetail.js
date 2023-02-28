@@ -13,8 +13,8 @@ function openCity(evt, cityName) {
 }
 
 $('#productdetail .carousel').carousel({
-  interval: 300000,
+  interval: 300,
   keyboard: true,
-  pause: 'hover',
+  // pause: 'hover',
   wrap: true
 });

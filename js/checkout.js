@@ -12,9 +12,8 @@ $('.remove button').click(function () {
   removeItem(this);
 });
  
-$(document).ready(function () {
   updateSumItems();
-});*/
+*/
 
 $('.promo-code-cta').click(function () {
   promoCode = $('#promo-code').val();
