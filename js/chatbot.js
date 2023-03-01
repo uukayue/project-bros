@@ -76,7 +76,7 @@ $(function () {
 		let message = `
 		<div class="chatbot-message-item received">
 			<span class="chatbot-message-item-text">
-			We would be happy to assist you! Our <a href="#">FAQ</a> site is a great place to start for product information and troubleshooting help.
+			We would be happy to assist you! Our <a href="#" onclick="route('faqs');">FAQ</a> site is a great place to start for product information and troubleshooting help.
 			</span>
 			<span class="chatbot-message-item-time">${addZero(today.getHours())}:${addZero(today.getMinutes())}</span>
 		</div>
@@ -100,3 +100,4 @@ function isValid(value) {
 
 	return text.length > 0
 }
+

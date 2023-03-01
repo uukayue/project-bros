@@ -1,5 +1,4 @@
 #recipes {
-  background-color: #b1734a;
   padding-bottom: 50px;
 }
 
@@ -13,7 +12,6 @@
 
 #recipes .container {
   font-family: sans-serif;
-  background: #b1734a;
   display: flex;
   justify-content: center;
   align-items: center;

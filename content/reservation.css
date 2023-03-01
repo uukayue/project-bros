@@ -1,22 +1,5 @@
-/*@import "compass/css3";
- @import "compass/reset";
- @import "compass/css3";
-*/
-/* Colors */
-/* ---------------------------------------- */
-/*{
-    @include box-sizing: border-box;
-}
-*/
- /*body {
-    text-align: center;
-    font-family: 'Lato', 'sans-serif';
-    font-weight: 400;
-}
- a {
-    text-decoration: none;
-}*/
- #reservation .info-text {
+
+#reservation .info-text {
     text-align: left;
     width: 100%;
 }
@@ -40,7 +23,7 @@
     text-align: left;
     position: relative;
 }
-#reservation  .controls input[type="text"], .controls input[type="email"], .controls input[type="number"], .controls input[type="date"],#reservation .controls input[type="tel"],  .controls input[type="time"], .controls textarea, .controls button, .controls select {
+#reservation  .controls input[type="text"], #reservation .controls input[type="email"], #reservation .controls input[type="number"], #reservation .controls input[type="date"],#reservation .controls input[type="tel"], #reservation  .controls input[type="time"], #reservation .controls textarea, #reservation .controls button, #reservation .controls select {
     padding: 16px;
     font-size: 14px;
     border: 1px solid #c6c6c6;
@@ -51,7 +34,7 @@
     border-radius: 2px;
     transition: all .3s;
 }
-#reservation  .controls input[type="text"]:focus, .controls input[type="text"]:hover, .controls input[type="email"]:focus, .controls input[type="email"]:hover, .controls input[type="number"]:focus, .controls input[type="number"]:hover, .controls input[type="date"]:focus, .controls input[type="date"]:hover, .controls input[type="tel"]:focus, .controls input[type="tel"]:hover, .controls input[type="time"]:focus, .controls input[type="time"]:hover, .controls textarea:focus, .controls textarea:hover, .controls button:focus, .controls button:hover, .controls select:focus, .controls select:hover {
+#reservation  .controls input[type="text"]:focus, #reservation .controls input[type="text"]:hover, #reservation .controls input[type="email"]:focus, #reservation .controls input[type="email"]:hover, #reservation .controls input[type="number"]:focus, #reservation .controls input[type="number"]:hover, #reservation .controls input[type="date"]:focus, #reservation .controls input[type="date"]:hover, #reservation .controls input[type="tel"]:focus, #reservation .controls input[type="tel"]:hover, #reservation .controls input[type="time"]:focus, #reservation .controls input[type="time"]:hover,#reservation .controls textarea:focus, #reservation .controls textarea:hover, #reservation .controls button:focus, #reservation .controls button:hover, #reservation .controls select:focus, #reservation .controls select:hover {
     outline: none;
     border-color: #5c4410;;
 }
@@ -89,6 +72,14 @@
     background-color: white;
     width: auto;
 }
+
+.active {
+    top: -11px;
+    color: #5c4410;;
+    background-color: white;
+    width: auto;
+}
+
 #reservation .controls textarea {
     resize: none;
     height: 200px;
@@ -144,14 +135,14 @@
     width: 25%;
 }
  @media (max-width: 760px) {
-    .col-1-4-sm, .col-1-3, .col-2-3 {
+#reservation  .col-1-4-sm,#reservation  .col-1-3,#reservation  .col-2-3 {
        width: 100%;
    }
-    [class*='col-'] {
+#reservation [class*='col-'] {
        padding-right: 0px;
    }
 }
- .col-1-8 {
+#reservation  .col-1-8 {
     width: 12.5%;
 }
  

@@ -1,10 +1,10 @@
 #machines,
-#coffee {
+#capsules {
   font-family: "Poppins", sans-serif;
 }
 
 #machines .carousel-caption,
-#coffee .carousel-caption {
+#capsules .carousel-caption {
   position: absolute;
   top: 150px;
   color: white;
@@ -12,18 +12,18 @@
 }
 
 #machines .carousel-caption div:first-of-type,
-#coffee .carousel-caption div:first-of-type {
+#capsules .carousel-caption div:first-of-type {
   font-size: 4.5rem;
   line-height: 1.2;
 }
 
 #machines .slidecontainer,
-#coffee .slidecontainer {
+#capsules .slidecontainer {
   width: 120%;
 }
 
 #machines .slider,
-#coffee .slider {
+#capsules .slider {
   -webkit-appearance: none;
   width: 20%;
   height: 20px;
@@ -36,12 +36,12 @@
 }
 
 #machines .slider:hover,
-#coffee .slider:hover {
+#capsules .slider:hover {
   opacity: 1;
 }
 
 #machines .slider::-webkit-slider-thumb,
-#coffee .slider::-webkit-slider-thumb {
+#capsules .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 20px;
@@ -51,7 +51,7 @@
 }
 
 #machines .slider::-moz-range-thumb,
-#coffee .slider::-moz-range-thumb {
+#capsules .slider::-moz-range-thumb {
   width: 20px;
   height: 20px;
   background: #04aa6d;
@@ -59,13 +59,13 @@
 }
 
 #machines .slidecontainer,
-#coffee .slidecontainer {
+#capsules .slidecontainer {
   color: white;
   margin-left: 120px;
 }
 
 #machines .img-fluid,
-#coffee .img-fluid {
+#capsules .img-fluid {
   max-height: 100vh;
   width: auto;
   height: auto;
@@ -73,18 +73,18 @@
 }
 
 #machines .container,
-#coffee .container {
+#capsules .container {
   padding-bottom: 60px;
 }
 
 #machines .card-deck .card,
-#coffee .card-deck .card {
+#capsules .card-deck .card {
   padding: 10px;
   justify-content: space-between;
 }
 
 #machines .card-block,
-#coffee .card-block {
+#capsules .card-block {
   padding: 15px 20px;
   height: 100%;
   /* display: flex;
@@ -93,7 +93,7 @@
 }
 
 #machines .card-title,
-#coffee .card-title {
+#capsules .card-title {
   min-height: 50px;
 }
 
@@ -102,12 +102,12 @@
   padding: 10px 0;
 }
 
-#coffee .card .text-left {
+#capsules .card .text-left {
   height: 450px;
   padding: 10px 0;
 }
 
 #machines .card img,
-#coffee .card img {
+#capsules .card img {
   cursor: pointer;
 }

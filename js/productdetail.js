@@ -18,3 +18,10 @@ $('#productdetail .carousel').carousel({
   // pause: 'hover',
   wrap: true
 });
+
+$('#productdetail2 .carousel').carousel({
+  interval: 300,
+  keyboard: true,
+  // pause: 'hover',
+  wrap: true
+});

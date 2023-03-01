@@ -1,11 +1,6 @@
-// ************************************************
-// Shopping Cart API
-// ************************************************
 
+// Shopping Cart API
 var shoppingCart = (function () {
-  // =============================
-  // Private methods and propeties
-  // =============================
   cart = [];
 
   // Constructor
@@ -28,10 +23,6 @@ var shoppingCart = (function () {
     loadCart();
   }
 
-
-  // =============================
-  // Public methods and propeties
-  // =============================
   var obj = {};
 
   // Add to cart
@@ -135,13 +126,13 @@ var shoppingCart = (function () {
   return obj;
 })();
 
-// *****************************************
 // Triggers / Events
-// ***************************************** 
 // Add item
 jQuery(document).on('click', '.add-to-cart', function (event) {
-  event.preventDefault();
+  console.log($(this))
+
   var name = $(this).data('name');
+  console.log(name)
   var price = Number($(this).data('price'));
   shoppingCart.addItemToCart(name, price, 1);
   displayCart();

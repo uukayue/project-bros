@@ -1,15 +1,14 @@
 $(document).ready(function () {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  // When the user scrolls the page, execute myFunction
+  // When the user scrolls the page, execute scrollEffect
   window.onscroll = function () { scrollEffect() };
-  // Get the header
-  // var header = document.getElementById("myHeader");
-  // Get the offset position of the navbar
-  // var sticky = header.offsetTop;
 
   shoppingCart.clearCart();
   displayCart();
+
+  // just add a class of "floatLabel" to the input field!
+  floatLabel(".floatLabel");
 });
 
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
@@ -34,14 +33,14 @@ $('#machines .carousel').carousel({
   wrap: true
 });
 
-$('#coffee .carousel').carousel({
+$('#capsules .carousel').carousel({
   interval: 3000,
   keyboard: true,
   pause: 'hover',
   wrap: true
 });
 
-// Registration
+// Registration&Checkout
 function floatLabel(inputType) {
   $(inputType).each(function () {
     var $this = $(this);
@@ -57,42 +56,65 @@ function floatLabel(inputType) {
     });
   });
 }
-// just add a class of "floatLabel to the input field!"
-floatLabel(".floatLabel");
 
-// Login
-var img__btn = document.querySelector('.img__btn');
-if (img__btn) {
-  img__btn.addEventListener('click', function () {
-    document.querySelector('.cont').classList.toggle('s--signup');
-  });
-}
 
-if (document.getElementById("password") && document.getElementById("confirm_password").value) {
-  function validatePassword() {
-    if (document.getElementById("password").value != document.getElementById("confirm_password").value) {
-      confirm_password.setCustomValidity("Passwords Don't Match");
-    } else {
-      confirm_password.setCustomValidity('');
-    }
-  }
+// Sign Up Login
+$(document).on('click', '.img__btn', function () {
+  document.querySelector('.cont').classList.toggle('s--signup');
+})
 
-  document.getElementById("password").onchange = validatePassword();
-  document.getElementById("confirm_password").onkeyup = validatePassword();
-}
-
-// Sign Up
-function validateSignUpForm() {
-  var x = document.forms["myForm"]["fname"].value;
-  if (x == null || x == "") {
-    alert("需要输入名字。");
-    return false;
+function validatePassword() {
+  let pass = $('#signUpPassword')
+  let confirmpass = $('#signUpConfirmPassword')
+  if (pass && confirmpass && pass.val() != confirmpass.val()) {
+    document.getElementById("signUpConfirmPassword").setCustomValidity("Passwords Don't Match");
+  } else {
+    document.getElementById("signUpConfirmPassword").setCustomValidity('');
   }
 }
+
+$(document).on('change', '#checkoutpassword', function () {
+  validatePassword()
+})
+
+$(document).on('change', '#checkoutconfirm_password', function () {
+  validatePassword()
+})
+
+function validateCheckOutPassword() {
+  let pass = $('#checkoutpassword')
+  let confirmpass = $('#checkoutconfirm_password')
+  if (pass && confirmpass && pass.val() != confirmpass.val()) {
+    document.getElementById("checkoutconfirm_password").setCustomValidity("Passwords Don't Match");
+  } else {
+    document.getElementById("checkoutconfirm_password").setCustomValidity('');
+  }
+}
+
+//checkoutlogin
+// var img__btn = document.querySelector('.img__btn');
+// if (img__btn) {
+//   img__btn.addEventListener('click', function () {
+//     document.querySelector('.cont').classList.toggle('s--signup');
+//   });
+// }
+
+// if (document.getElementById("checkoutpassword") && document.getElementById("checkoutconfirm_password").value) {
+//   function validatePassword() {
+//     if (document.getElementById("checkoutpassword").value != document.getElementById("checkoutconfirm_password").value) {
+//       confirm_password.setCustomValidity("Passwords Don't Match");
+//     } else {
+//       confirm_password.setCustomValidity('');
+//     }
+//   }
+
+//   document.getElementById("checkoutpassword").onchange = validatePassword();
+//   document.getElementById("checkoutconfirm_password").onkeyup = validatePassword();
+// }
+
 
 // Shopping Cart
 function openPopup(e) {
-  alert('hrllo')
   e.preventDefault();
   $('#popup').addClass("open-popup");
   // return false;
@@ -106,11 +128,14 @@ function closePopup() {
 //SwitchPages//
 function route(section) {
   $(".module").hide();
-  $("#chatbot").show();
+  $("#guestBtn").hide();
 
   if (section == "homepage") {
     $("#homepage").show();
     $("#about").show();
+  } else if (section == "ordernow") {
+    $("#login").show();
+    $("#guestBtn").show();
   } else {
     $("#" + section).show();
   }
@@ -121,11 +146,12 @@ function route(section) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+//productDetailTemplate//
 function routedetail(series, int) {
   $(".module").hide();
   $("#productdetail").show();
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  
+
   readTextFile("../data.json", function (text) {
     var data = JSON.parse(text)[int - 1]; // -1 becoz array starts from 0
 
@@ -138,7 +164,7 @@ function routedetail(series, int) {
       pics.push("<div class='slide'><img id='pd_pic_" + key + "' src='" + val + "' /></div>");
     });
     $('#pd_pic').html(pics.join(""));
-    if (series == 'machine') {
+    if (series == 'machines') {
       $('#s3').show();
       $('#s4').show();
       $('slide3').show();
@@ -159,28 +185,40 @@ function routedetail(series, int) {
     $('#pd_desc_header').html(data.description.header);
     $('#pd_desc_body').html(data.description.body);
 
-    if (series == 'machine') {
+    if (series == 'machines') {
+      $('#pd_color').show();
+    }
+    else {
+      $('#pd_color').hide();
+    }
+
+    if (series == 'machines') {
       var specs = [];
       $.each(data.Specification, function (key, val) {
         specs.push("<p id='pd_spec_" + key + "'>" + val + "</p>");
       });
-      $('#pd_specs').html(specs.join(""));
-      $('#specifications').show();
+      $('#pd_specs_body').html(specs.join(""));
+      $('#pd_specs').show();
     }
     else {
-      $('#specifications').hide();
+      $('#pd_specs_body').hide();
+      $('#pd_specs').hide();
     }
 
-    $('#pd_price').html(data.price);
+    $('#pd_price').html('HKD ' + data.price);
 
     $('#backButton').click(function () {
       route(series);
     });
 
-    console.log(data);
+    $('#addBtnPD').data('name', data.name);
+    $('#addBtnPD').data('price', data.price);
+
+    // console.log($('#addBtnPD'));
   });
 }
 
+//navBarColor//
 function GetActiveModule() {
   return $('.module:visible')[0].id;
 }
@@ -189,8 +227,8 @@ function setTheme() {
   var LightTheme = false;
   $('.navbar .hamburger-lines .line').css("background-color", "#fff");
 
-  var darkmodemodulelist = ['machines', 'coffee']
-  var lightmodemodulelist = ['about', 'checkout', 'productdetail', 'productdetail2', 'reservation', 'location', 'faqs', 'checkout', 'recipes', 'login']
+  var darkmodemodulelist = ['machines', 'capsules']
+  var lightmodemodulelist = ['about', 'checkout', 'productdetail', 'productdetail2', 'reservation', 'location', 'faqs', 'recipes', 'login']
 
   var activemodule = GetActiveModule()
 
@@ -225,18 +263,3 @@ function readTextFile(file, callback) {
   }
   rawFile.send(null);
 }
-
-
-// function Login() {
-//   var done = 0;
-//   var phonenumber = document.login.phonenumber.value;
-//   (phonenumber = phonenumber);
-//   var password = document.login.password.value;
-//   password = password.toLowerCase();
-//   if (username == "帳號" && password == "密碼") { window.location = "登入後會出現的網站"; done = 1; }
-//   if (done == 0) { alert("帳號或密碼錯誤時出現的訊息"); }
-// }
-// if (phonenumber == "phonenumber" && password == "password") { window.location = "登入後會出現的網站"; done = 1; }
-// if (done == 0) {
-//   alert("密碼不正確,請再次輸入");
-// } 
