@@ -87,9 +87,6 @@
 #capsules .card-block {
   padding: 15px 20px;
   height: 100%;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-around; */
 }
 
 #machines .card-title,

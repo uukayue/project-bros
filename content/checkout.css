@@ -245,3 +245,29 @@ form {
   cursor: pointer;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
+
+
+#checkout .radio:checked + label {
+  background-color: burlywood;
+  color: #fff;
+  padding: 0px;
+  transition: 0.5s;
+  
+}
+
+#checkout .input_box button {
+  width: 100%;
+  background-color: burlywood;
+  border: none;
+  color: #fff;
+  padding: 15px;
+  border-right: 4px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+#checkout .input_box button:hover {
+  cursor: pointer;
+  background-color: rgb(211, 159, 90);
+}

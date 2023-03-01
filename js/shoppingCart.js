@@ -191,3 +191,15 @@ function displayCart() {
   $('.total-cart').html(shoppingCart.totalCart());
   $(".has-badge").attr("data-count", shoppingCart.totalCount());
 }
+
+// Shopping Cart
+function openPopup(e) {
+  e.preventDefault();
+  $('#popup').addClass("open-popup");
+  // return false;
+}
+
+function closePopup() {
+  $('#popup').removeClass("open-popup");
+  return false;
+}
