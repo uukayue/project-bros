@@ -1,0 +1,77 @@
+#signup {
+  /* width: 70%; */
+  /* margin: 50px auto; */
+ padding-bottom: 50px;
+}
+
+#signup form {
+  border: 3px solid #281914e2;
+  border-radius: 10px;
+  padding: 50px 100px;
+}
+
+#signup .col {
+  padding: 20px;
+}
+
+#signup span {
+  color: #444;
+  font-size: 12px;
+  padding-top: 16px;
+}
+
+#signup form input[type="text"],
+#signup form input[type="password"],
+#signup form select {
+  /*background-color: white;*/
+  border-radius: 8px;
+  color: black;
+  /*background-color: azure;*/
+  width: 300px;
+  float: right;
+  margin-right: 60px;
+  margin-left: 60px;
+  display: inline-block;
+  border: 2px solid #281914e2;
+  box-sizing: border-box;
+  margin: 12px;
+}
+
+#signup form .submit {
+  background-color: #281914e2;
+  color: white;
+  padding: 20px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 8px;
+}
+
+#signup form button:hover {
+  background-color: #444;
+  transition: 0.4s;
+}
+
+#signup .logo {
+  margin: 10px 0 50px 0;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+p1 {
+  font-size: 12px;
+}
